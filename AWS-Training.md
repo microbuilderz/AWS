@@ -32,7 +32,27 @@
  
         > AWS offers a huge range of features and services to help customers achieve their goals.
         
-### 
++    ### AWS Global Infrastructure :
+
+        -    AWS Regions:
+
+                AWS cloud computing ressources are hosted in multiple locations called **AWS regions**. 
+                Each region is completly isolated -> great fault tolerance and stability -> increased [resiliency](https://en.wikipedia.org/wiki/Resilience_(network)). 
+                
+                >    Ressources are only viewable withtin the region, no ressources are replicated automatically across regions.
+
+        -    Availibility zone (AZ):
+                seperat geographic area with multiple isolated locations. All AZ are interconnected with high bandwidth low latency fully [redundent fiber](https://blog.ospinsight.com/the-importance-of-fiber-network-redundancy) 
+
+                >    Deploying on multiple AZ in the same region improves the availability.
+
+        - Points of Presence (POP):
+               Edge locations and regional Edge cache servers are used by Amazon CloudFront to deliver data, video, apps and APS with low latency transfer speed.
+
+        >    [AWS Infrastructure](https://www.infrastructure.aws/)
+
+
+
 
 
 
