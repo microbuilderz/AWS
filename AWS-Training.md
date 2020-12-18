@@ -6,7 +6,7 @@
 - POC : Proof of concept
 - APN : AWS Partner Network
 
-
+# 
 ## AWS Core Technologies :
 
 +    ### Cloud :
@@ -33,8 +33,7 @@
         > AWS offers a huge range of features and services to help customers achieve their goals.
         
         
-+   ### AWS Global Infrastructure 
-    [infrastructure](https://www.infrastructure.aws/)
++   ### AWS Global [Infrastructure](https://www.infrastructure.aws/)
 
     -    AWS Regions:
 
@@ -54,16 +53,17 @@
     -    Points of Presence (POP):
     
             Edge locations and regional Edge cache servers are used by Amazon CloudFront to deliver data, video, apps and APS with low latency transfer speed.
-
+# 
 ## AWS core categories :
 
 AWS has infrustructure services in different catgeories : Compute, Storage, Database, Security, Management, Networking. Thus offering a **high degree of architecture flexebility**. Cutomers can power up Web & Mobile apps, Data processing and Warehousing, Storage and archiving.
 
-+    ### Compute services EC2 
-        [compute types](https://aws.amazon.com/products/compute/) 
++    ### [Compute](https://aws.amazon.com/products/compute/) services EC2 
     
         They allow customers to Develop, Deploy, Run & scale workloads.
         They are the compute building blocks and comes with a large variaty of hardware configurations. Their software are customizeable at launch trough **AMI**. Can be used with auto scaling and load balancers.
+
+        # ![image](./images/compute.jpg)
 
         +    #### AWS compute services
 
@@ -108,7 +108,7 @@ AWS has infrustructure services in different catgeories : Compute, Storage, Data
                 5. **Amazon ECS** : Elastic Container service
                 
                     Highly scalable, high performance container management service that **supports docker containers**. It allows easy running of apps on a **managed cluster of Amazon EC2 instances**.
-
+        # 
         +    #### AWS EC2 Benefits :
 
                 1. **Elasticity** : 
@@ -140,7 +140,7 @@ AWS has infrustructure services in different catgeories : Compute, Storage, Data
                 8. **Easy to get started** :
                 
                     Free to get started.
-                    
+        #           
         +    #### AWS EC2 [Instance types](https://aws.amazon.com/ec2/instance-types/)  :
                 
                 Refers to the hardware capabilities of an instance.
@@ -166,13 +166,13 @@ AWS has infrustructure services in different catgeories : Compute, Storage, Data
                     For high sequential read/write access. 10.000 of IO access/second.
 
                 > Each category has different families, example : A,T,M inside the general purpose category.
-
+        #
         +   #### Amazon Machine Images (AMI) :
 
             Initial software configuration of an instance.
             AMIs must be specified when launching the instance.
             AMI are provided by AWS, AWS marketplace, User community, or custom AMIs chich can be created and managed by the customer.
-
+        #
         +   ### Scalable architecture :
 
             In the Cloud, **computing power is a programmatic ressource**, allowing **flexible scaling** approach:
@@ -184,4 +184,75 @@ AWS has infrustructure services in different catgeories : Compute, Storage, Data
             3. Automatically scale down when the need is low.
             
             > The customer only pays for the used ressources.  
-              
+# 
++    ### [Storage](https://aws.amazon.com/products/storage/) Services 
+
+        A reliable, scalable and secure place for data.
+        
+        ![image](./images/storageServices.jpg)
+
+        +   #### AWS storage services
+            
+            1. **Amazon Elastic Block Store (EBS)** :
+
+                **Persistent storage** like a hard drive. Customers can create partitions on it, format it and boot from it. It Persists **independently** from the **instances**. 
+                
+                They are automatically **replicated across zones** to prevent data loss.
+
+                Can be attached to **any instance in the zone**.
+
+                Can only be **attached to one EC2 instance** except in the case of using **multi attach OPS ssd** (max 16 instances).
+                
+                One instance can attach to **multiple EBS volumes**.
+
+                Allow point in time snapshots which are stored in S3. The **snapshot** can be **copied across regions**.
+
+                > Sizes are between 1 Giga Byte to 16 Terra Byte **allocated by 1 Giga Byte increment**.
+
+            2. **Amazone Simple Storage service [(S3)](https://aws.amazon.com/s3/)**:
+            
+                Storage for internet wich privides simple web service interface which can be used to store and retrieve data from the internet.
+            
+                It's an object storage service. It stores data in objects called **buckets** 
+
+                **Unlimited** number of objects , each with a **max size of 5 Terrabyte**.
+
+                It supports eleven 9s of durability and four 9s of availibility.
+
+                ![storage](./images/s3Storage.jpg)
+
+                > **Use cases** : 
+                >
+                > - backup and storage
+                > - application hosting
+                > - media hosting
+                > - software delivery ( downloadable software )
+
+            3. **Amazon S3 Glacier**:
+        
+                For data archiving. It allows the easy storage of big data with low cost for decades.
+
+            4. **AWS storage Gateway**: 
+            
+                Transfer data between on promises sites and aws storage infrastructure (in and out). 
+
+            5. **Amazone Elastic File System (EFS)** :
+            
+                File storage for EC2 instances. It provides a simple interface for creating and configuring file systems.
+                The storage is elastic.
+
+        +   #### [Storage classes](https://aws.amazon.com/s3/storage-classes/) :
+
+            # ![storage](./images/s3StorageClasses.jpg)
+
+            1. **S3 standard** : for frequently accessed data, low latency high throughput.
+             
+            2. **S3 standard infrequent access (IA)** : for data that is accessed less frequently, but rapidly. cost less then S3 standard and is ideal for long term storage, backups and disaster recovery files.
+             
+            3. **S3 One Zone IA** : costs 20% then standard IA. costs 20% less, good for secondary backup copy or easy recreatble data.
+            
+            4. **S3 Glacier** : For data archiving. It allows the easy storage of big data with low cost for decades.provides three retrieval options.
+        
+            > **S3 intelligent tiering** is offered in order to **automate cost saving** by moving data between **two acces tiers** configured by the customer.
+        
+            
