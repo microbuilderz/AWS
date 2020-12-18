@@ -4,7 +4,7 @@
 
 - AWS : Amazon web service
 - POC : Proof of concept
--APN : AWS Partner Network
+- APN : AWS Partner Network
 
 
 ## AWS Core Technologies :
@@ -40,19 +40,19 @@
                 AWS cloud computing ressources are hosted in multiple locations called **AWS regions**. 
                 Each region is **completly isolated** -> great fault tolerance and stability -> increased [resiliency](https://en.wikipedia.org/wiki/Resilience_(network)). 
                 
-                >:bulb: Ressources **are only viewable withtin the region**, no ressources are replicated automatically across regions.
+                > Ressources **are only viewable withtin the region**, no ressources are replicated automatically across regions.
 
         -    Availibility zone (AZ):
         
                 Seperated geographic area with multiple isolated locations. All AZ are interconnected with high bandwidth low latency fully [redundent fiber](https://blog.ospinsight.com/the-importance-of-fiber-network-redundancy) 
 
-                >:information_source:Deploying on  multiple AZ in the same region improves the availability.
+                > Deploying on  multiple AZ in the same region improves the availability.
 
         -    Points of Presence (POP):
         
                 Edge locations and regional Edge cache servers are used by Amazon CloudFront to deliver data, video, apps and APS with low latency transfer speed.
 
-        > :information_source: [AWS Infrastructure](https://www.infrastructure.aws/)
+        > [AWS Infrastructure](https://www.infrastructure.aws/)
 
 
 
