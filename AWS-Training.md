@@ -73,7 +73,7 @@ AWS has infrustructure services in different catgeories : Compute, Storage, Data
     
                     > compute capacity refers to that functionality that is traditionally provided by on premises and virtual servers.
 
-                2. Amazon EC2 [Auto Scaling](https://aws.amazon.com/ec2/autoscaling/).
+                2. **Amazon EC2 [Auto Scaling](https://aws.amazon.com/ec2/autoscaling/)**.
                 
                     Customer can maintain the health and availability of their applications by **setting triggers** to **automatically increase/decrease** the number of instances
 
@@ -101,11 +101,11 @@ AWS has infrustructure services in different catgeories : Compute, Storage, Data
                     2. Network load balancer.(*more resilient on traffic spikes*)
                     3. Classic load balancer.(*previous generation load balancer for EC2 classic instances*)
                 
-                4. AWS Lambda
+                4. **AWS Lambda**.
                 
                     Runs code without server management. It is referred as **serverless computing**. Codes are run withtin **milliseconds of an event**
                 
-                5. **Amazon ECS** : Elastic Container service
+                5. **Amazon ECS** : Elastic Container service.
                 
                     Highly scalable, high performance container management service that **supports docker containers**. It allows easy running of apps on a **managed cluster of Amazon EC2 instances**.
         # 
@@ -255,4 +255,44 @@ AWS has infrustructure services in different catgeories : Compute, Storage, Data
         
             > **S3 intelligent tiering** is offered in order to **automate cost saving** by moving data between **two acces tiers** configured by the customer.
         
++    ### [Database](https://aws.amazon.com/products/databases/) Services  
+
+        ## Advantages Over EC2
+
+        - **Easier to setup an maintain** then running database software on EC2. 
+    
+        - Backup/recovery/managing patches/updates .. is done automatically within amazone RDS.
+    
+        - High available database, synchronous multi zone deployment.
+    
+        - Synchronized replication for high availability oracle.
+    
+        - No need to manage backups and point in time recoveries.
+
+        ## Disadvantage in contrast to EC2
+        
+        - **In Ec2** the customer has **more control and flexibility**.
+
+        - Operating System access. Use of commercial software not supported by database services.
+
+        ![db](./images/dbServices.jpg)  
+
+        ## Database Storage Types:
+        
+        1. Amatzon RDS :
             
+            Supports Amazone Aurora/Postgres/MariaDB/MySQL/Oracle/MySQL server. Scalable, cost efficient and resizeable capacity.
+            
+            Has automatic backup, snapshots, automatic host replacement.
+
+        2. Amazon DynamoDB :
+        
+            noSQL database. fast and predicatble performance in range of millisecond digits.
+
+        3. Amazon ElastiCache :
+        
+            Deploy in memory cache in the cloud. Improves the performance of web apps from a fast managed in memory cache instead of slower disk based databases.
+    
+         
+            
+        
