@@ -257,7 +257,7 @@ AWS has infrustructure services in different catgeories : Compute, Storage, Data
         
 +    ### [Database](https://aws.amazon.com/products/databases/) Services  
 
-        ## Advantages Over EC2
+        #### **Advantages Over EC2**
 
         - **Easier to setup an maintain** then running database software on EC2. 
     
@@ -269,7 +269,7 @@ AWS has infrustructure services in different catgeories : Compute, Storage, Data
     
         - No need to manage backups and point in time recoveries.
 
-        ## Disadvantage in contrast to EC2
+        #### **Disadvantage in contrast to EC2**
         
         - **In Ec2** the customer has **more control and flexibility**.
 
@@ -277,7 +277,7 @@ AWS has infrustructure services in different catgeories : Compute, Storage, Data
 
         ![db](./images/dbServices.jpg)  
 
-        ## Database Storage Types:
+        #### **Database Storage Types:**
         
         1. Amatzon RDS :
             
