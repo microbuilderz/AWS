@@ -369,4 +369,8 @@ It allows :
 #### **AWS cloud [compliance](https://aws.amazon.com/compliance/)**
 
 - AWS environment are continuasly audited.
-- AWS shars information about industry certifications, security and control practices, 
+- AWS shars information about industry certifications, security and control practices.
+
+#     
+### [Management Interfaces](https://docs.aws.amazon.com/)
+
