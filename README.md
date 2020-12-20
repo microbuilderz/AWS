@@ -2,4 +2,4 @@
 
 AWS Technical Professional training
 
-[training infos are in this file](AWS-Training.md)
+[AWS Core Technologies](AWS-core.md)

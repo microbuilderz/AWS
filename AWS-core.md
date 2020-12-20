@@ -374,3 +374,13 @@ It allows :
 #     
 ### [Management Interfaces](https://docs.aws.amazon.com/)
 
+**Three way of management** based on **restfull api**
+
+- AWS **management console** :GUI Interface to manage cloud.
+- AWS **Command Line Interface** (CLI) interface allows access via commands.
+- AWS **Software development Kits** (SDK) allows acces inside code. 
+
+### Conclusion
+
+- AWS offers more then 165 services: from compute, storage, machine learning, analytics, IoT
+-  
