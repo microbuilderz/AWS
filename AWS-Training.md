@@ -63,7 +63,7 @@ AWS has infrustructure services in different catgeories : Compute, Storage, Data
 They allow customers to Develop, Deploy, Run & scale workloads.
 They are the compute building blocks and comes with a large variaty of hardware configurations. Their software are customizeable at launch trough **AMI**. Can be used with auto scaling and load balancers.
 
-![image](./images/compute.jpg)
+> ![image](./images/compute.jpg)
 +    #### AWS compute services
 
         1. **Amazon EC2** : Amazon Elastic Compute Cloud.
@@ -188,7 +188,7 @@ They are the compute building blocks and comes with a large variaty of hardware 
 
 A reliable, scalable and secure place for data.
 
-![image](./images/storageServices.jpg)
+> ![image](./images/storageServices.jpg)
 
 +   #### AWS storage services
     
@@ -218,7 +218,7 @@ A reliable, scalable and secure place for data.
 
         It supports eleven 9s of durability and four 9s of availibility.
 
-        ![storage](./images/s3Storage.jpg)
+        > ![storage](./images/s3Storage.jpg)
 
         > **Use cases** : 
         >
@@ -242,7 +242,7 @@ A reliable, scalable and secure place for data.
 
 +   #### [Storage classes](https://aws.amazon.com/s3/storage-classes/) :
 
-    # ![storage](./images/s3StorageClasses.jpg)
+    > ![storage](./images/s3StorageClasses.jpg)
 
     1. **S3 standard** : for frequently accessed data, low latency high throughput.
         
@@ -275,7 +275,7 @@ A reliable, scalable and secure place for data.
 
 - Operating System access. Use of commercial software not supported by database services.
 
-![db](./images/dbServices.jpg)  
+> ![db](./images/dbServices.jpg)  
 
 #### **Database Storage Types:**
 
@@ -294,6 +294,79 @@ A reliable, scalable and secure place for data.
     Deploy in memory cache in the cloud. Improves the performance of web apps from a fast managed in memory cache instead of slower disk based databases.
 
 #     
-### Networking       
+### [Networking](https://aws.amazon.com/products/networking/) services 
+
+It enables customers to build a virutal private network in the cloud ([VPC](https://en.wikipedia.org/wiki/Virtual_private_cloud)).
+
+It provides security features for group access and network access control lists.
+
+Amazon53 is a **DNS service** that routes users to applications by translating human readble names into IP addresses.
             
+> ![db](./images/network.jpg)
+
+#### **Amazon Virtual private Network (VPC):**
+
+- Customers have complete control over their virtual network : 
+    
+    1. Select their IP ranges.
+    2. Create subnets.
+    3. Configure route tables and gateways.
         
+- Ressouces can be launched into a specified [subnets](https://en.wikipedia.org/wiki/Subnetwork):
+    
+    1. **public subnet** : for for ressources connected to internet 
+    2. **private subnet** : ressources that are not connected to internet.
+
+#### **[Amazon network security](https://aws.amazon.com/answers/networking/vpc-security-capabilities/)**
+- **Amazon Network security groups:**
+
+    - controls traffic at the instance level like a firewall.
+    - 5 security groups can be set per instance.
+    - If not set a default security froup will be applied. 
+      
+- **Amazon Network access control Lists (NACL):**
+
+    - controls traffic at a subnet level.
+
+- **VPC flow log** 
+    - captures netwokr information and store it in **Amazon CloudWatch** Log. It can be used to check why a traffic is not reaching an instance which might be causes by over restrictive security groups.
+
+- **Host based Firewalls**
+    - can be enabled at the operating system. example iptables, windows fierwalls or third party ones.
+
+# 
+### **Amazon [security,identity and compliance services](https://aws.amazon.com/products/security/)**
+
+Benefits of AWS Security:
+
+- **Keeps Your Data Safe**: The AWS infrastructure puts strong safeguards in place to help protect customers privacy. All data is stored in highly secure AWS data centers.
+
+- **Meet Compliance Requirements**: AWS manages dozens of compliance programs in its infrastructure. This means that segments of your compliance have already been completed.
+
+- **Save Money**: Cut costs by using AWS data centers. Maintain the highest standard of security without having to manage your own facility
+
+- **Scale Quickly**: Security scales with your AWS Cloud usage. No matter the size of your business, the AWS infrastructure is designed to keep customers data safe.
+
+> ![db](./images/security.jpg)
+
+#### **AWS Identity and access management ([IAM](https://aws.amazon.com/iam/))**
+
+Manages access to AWS services and ressources. Throught IAM, user and groups can be created and permission can be managed.
+It allows :
+
+- **Fine grained access to AWS ressources**. ( limiting users to certain ressources, specific access at a specific time of day , ...)
+- **Multi factor Authentication** for priviledged users.
+- Possibility to **analyze access**.
+- **Integration with corporate directories** to allow **[federated access](https://en.wikipedia.org/wiki/Federated_identity)** like Microsoft active directory.
+ 
+#### **AWS [shared responsability model](https://aws.amazon.com/compliance/shared-responsibility-model/)**
+
+> ![db](./images/sharedSecurity.jpg)
+
+- AWS is responsible for the **security of the cloud** : hardware, software networking and facilities. It is also reponsible for the security configurations of it's products.
+
+- Customers are reponsible for the **security in the cloud** : security of customer content and applications that use AWS services.
+#### **AWS cloud [compliance](https://aws.amazon.com/compliance/)**
+
+- AWS environment are continuasly audited.
+- AWS shars information about industry certifications, security and control practices, 
