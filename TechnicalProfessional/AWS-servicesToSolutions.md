@@ -11,7 +11,7 @@
     - the migration can be **automated** via **AWS VM Import/Export**.
     - Once hosted on the cloud, it is **easier to optimize and reachitecture** 
 
-- **Replattfor** : Lift tinker and shift
+- **Replattform** : Lift tinker and shift
  
     Same as Rehost but making cloud optimization. example :
     

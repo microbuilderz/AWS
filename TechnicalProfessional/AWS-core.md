@@ -33,6 +33,13 @@ New IT ressources are available within minutes.
         
         > Ressources **are only viewable withtin the region**, no ressources are replicated automatically across regions.
 
+        How to **choose a region?**:
+
+        1. Compliance : requirements (exmaple country requirment)
+        2. Proximity : close to customer (speed and latency)
+        3. Feature availability : not all features are availble in all regions.
+        4. Pricing : not same pricing for all regions. 
+
 -    ### Availibility zone (AZ):
 
         Seperated geographic area with multiple isolated locations. All AZ are interconnected with high bandwidth low latency fully [redundent fiber](https://blog.ospinsight.com/the-importance-of-fiber-network-redundancy).
@@ -40,17 +47,23 @@ New IT ressources are available within minutes.
         A minimum of 2 AZ is available in each region.
 
         > Deploying on multiple AZ in the same region **improves availability**.
+        > 
+        > On Instance runs in One AZ.
 
 -    ### Points of Presence (POP):
 
-        Edge locations and regional Edge cache servers are used by Amazon CloudFront to deliver data, video, apps and APS with low latency transfer speed.
+        Edge locations and regional Edge cache servers are used by **Amazon CloudFront (global content delivery service)** to store cached data, video, apps and APS with low latency transfer speed closer to customers. It accelerate communication and content delivery.
+  
+-   ### Amazon Outpost :
+        
+        AWS Outposts is a fully managed service that offers the same AWS infrastructure, AWS services, APIs, and tools to virtually any datacenter, co-location space, or on-premises facility for a truly consistent hybrid experience. AWS Outposts is ideal for workloads that require low latency access to on-premises systems, local data processing, data residency, and migration of applications with local system interdependencies.    
 
 ## AWS core categories :
 
 AWS has infrustructure services in different catgeories : Compute, Storage, Database, Security, Management, Networking. Thus offering a **high degree of architecture flexebility**. Cutomers can power up Web & Mobile apps, Data processing and Warehousing, Storage and archiving.
 
 #
-## [Compute](https://aws.amazon.com/products/compute/) services EC2 
+## [Compute](https://aws.amazon.com/products/compute/) services 
 
 They allow customers to Develop, Deploy, Run & scale workloads.
 They are the compute building blocks and comes with a large variaty of hardware configurations. Their software are customizeable at launch trough **AMI**. Can be used with auto scaling and load balancers.
@@ -66,7 +79,7 @@ They are the compute building blocks and comes with a large variaty of hardware 
 
 2. **Amazon EC2 [Auto Scaling](https://aws.amazon.com/ec2/autoscaling/)**.
 
-    Customer can maintain the health and availability of their applications by **setting triggers** to **automatically increase/decrease** the number of instances
+    Customer can maintain the health and availability of their applications by **setting triggers** to **automatically increase/decrease** the number of instances (horizontal scaling) as well as the hardware of the instance (vertiacal scaling)
 
     **automatically add/remove EC2 instances** to adapt to demand.
     
@@ -99,6 +112,15 @@ They are the compute building blocks and comes with a large variaty of hardware 
 5. **Amazon ECS** : Elastic Container service.
 
     Highly scalable, high performance container management service that **supports docker containers**. It allows easy running of apps on a **managed cluster of Amazon EC2 instances**.
+    Containers can be managed with API calls.
+
+6. **Amazon EKS** : Elastic Kubernetes service ( Container service)
+
+     Fully managed service that you can use to run Kubernetes on AWS. 
+
+7. **AWS Fargate** (serverless) :
+
+     It works with both Amazon ECS and Amazon EKS.
 
 ### AWS EC2 Benefits :
 
@@ -368,10 +390,23 @@ It allows :
 
 **Three way of management** based on **restfull api**
 
-- AWS **management console** :GUI Interface to manage cloud.
-- AWS **Command Line Interface** (CLI) interface allows access via commands.
-- AWS **Software development Kits** (SDK) allows acces inside code. 
+- AWS **management console** :GUI Interface to manage cloud. ( intranet based manual configuration )
+- AWS **Command Line Interface** (CLI) interface allows access via commands. ( scriptable can be run automatically)
+- AWS **Software development Kits** (SDK) allows acces inside code ( various programming languages )
+- AWS **AWS Elastic Beanstalk** ( Managed Tool)
+  
+    Provide code and configuration settings, and Elastic Beanstalk deploys the resources necessary to perform the following tasks:
 
+    1. Adjust capacity
+    2. Load balancing
+    3. Automatic scaling
+    4. Application health monitoring
+
+- AWS **CloudFormation** ( Managed Tool)
+
+    It can build an environment by writing lines of code instead of using the AWS Management Console to individually provision resources.
+    It provisions resources in a safe, repeatable manner, enabling Customers to frequently build their infrastructure and applications without having to perform manual actions or write custom scripts. It determines the right operations to perform when managing customers stack and rolls back changes automatically if it detects errors.
+    
 #
 ## Conclusion
 
