@@ -272,6 +272,7 @@ A reliable, scalable and secure place for data.
     It is ideal for use cases in which a large number of services and resources need to access the same data at the same time.
     Supports Multiple Read/write at the same time.
     Linux Based Filesystem. It is a **regional ressouce**.
+    It stores data in **multiple AZ**.
 
 ### [Storage classes](https://aws.amazon.com/s3/storage-classes/) :
 
@@ -329,22 +330,58 @@ A reliable, scalable and secure place for data.
     It is fully managed and uses a key value pair.
     It scales upto 10 Trillion requests per day.
 
-3. Amazon ElastiCache :
-
-    Deploy in memory cache in the cloud. Improves the performance of web apps from a fast managed in memory cache instead of slower disk based databases.
-
-4. Amazon Aurora:
+3. Amazon Aurora:
 
     It is compatible with MySQL and PostgreSQL relational databases.
     Five times faster than standard MySQL databases and up to three times faster than standard PostgreSQL databases.
 
     If the workloads require high availability. It replicates six copies of your data across three Availability Zones and continuously backs up your data to Amazon S3.
 
-5. Amazon RedShift:
+4. Amazon RedShift:
 
     It is a **data warehouse** for **Big Data** BI Solutions. Used for **looking backwards queries**.
     Petab Bytes of data. It is 10x Times fatser then traditional databases.
 
+5. Amazon DocumentDB:
+     
+    It is a **document database** service that supports MongoDB workloads. (MongoDB is a document database program.)
+
+6. Amazon Neptune:
+     
+    It is a graph database service. To build and run applications that work with highly connected datasets, such as recommendation engines, fraud detection, and knowledge graphs.
+
+7. Amazon Quantum Ledger Database (Amazon QLDB):
+    
+    It is a ledger database service. 
+    It can be used to review a complete history of all the changes that have been made to application data.
+
+8. Amazon Managed Blockchain :
+
+    It is a service that you can use to create and manage blockchain networks with open-source frameworks. 
+
+### **Additional Database services and accelerators**
+
+1. Amazon ElastiCache :
+
+    Deploy in memory cache in the cloud. Improves the performance of web apps from a fast managed in memory cache instead of slower disk based databases.
+
+2. Amazon DynamoDB Accelerator (DAX):
+    
+    It is an in-memory cache for DynamoDB. It helps improve response times from single-digit milliseconds to microseconds. 
+
+### **Database Migration Service AWS (DMS)**
+
+It enables the **migration** of relational databases, nonrelational databases, and other types of data stores.
+It can migarate homogenous ( Compatible source and target) and non hetrogenous databases( source and target are not compatible ).
+
+Hetrogenous migration is a 2 step migration: First the data needs to be converted using the **schema converter** then migrated via DMS
+
+While migrating using DMS , the source is kpt alive.
+
+DMS can be used during :
+    - Development and test database migration.
+    - Database consolidation : (combining several databases into one database).
+    - Coninuous replication.
 #     
 ## [Networking](https://aws.amazon.com/products/networking/) services 
 
@@ -419,13 +456,15 @@ Amazon Route53 is a **DNS service** that routes users to applications by transla
 
 ### **AWS Identity and access management ([IAM](https://aws.amazon.com/iam/))**
 
-Manages access to AWS services and ressources. Throught IAM, user and groups can be created and permission can be managed.
+Manages access to AWS services and ressources. Throught IAM, user and groups can be created and permission can be managed through **IAM policies**.
 It allows :
 
 - **Fine grained access to AWS ressources**. ( limiting users to certain ressources, specific access at a specific time of day , ...)
-- **Multi factor Authentication** for priviledged users.
+- Additional security with **Multi factor Authentication** for priviledged users (root).
 - Possibility to **analyze access**.
 - **Integration with corporate directories** to allow **[federated access](https://en.wikipedia.org/wiki/Federated_identity)** like Microsoft active directory.
+
+- **IAM Roles** is an identity that you can assume to gain temporary access to permissions.
  
 ### **AWS [shared responsability model](https://aws.amazon.com/compliance/shared-responsibility-model/)**
 
@@ -438,6 +477,15 @@ It allows :
 
 - AWS environment are continuasly audited.
 - AWS shars information about industry certifications, security and control practices.
+
+### **AWS Organizations**
+
+- it is used to consolidate and manage multiple AWS accounts within a **central location**.
+- In AWS Organizations, customers can **centrally control** permissions for the accounts in their organization by using **service control policies (SCPs)**
+- **SCPs enable** customers to place restrictions on the AWS services, resources, and individual API actions that users and roles in each account can access. It can place policies to the **organization root, an individual member account, or an Organizational Unit (OU)(group accounts)**
+- It also profits from the **consolidating billing** (one billing)
+
+### **Compliance**
 
 #     
 ## [Management Interfaces](https://docs.aws.amazon.com/)
