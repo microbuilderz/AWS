@@ -205,6 +205,10 @@ A reliable, scalable and secure place for data.
 > ![image](../images/storageServices.jpg)
 
 ### AWS storage services
+
+1. **Instance Stores**
+
+    Are not persistent. Best for Temporary data when it is not kept for long term.
     
 1. **Amazon Elastic Block Store (EBS)** :
 
@@ -218,7 +222,11 @@ A reliable, scalable and secure place for data.
     
     One instance can attach to **multiple EBS volumes**.
 
+    It stores data **in a single AZ**. It **can not be autoscaled**.
+
     Allow point in time snapshots which are stored in S3. The **snapshot** can be **copied across regions**.
+
+    For **complex read write change functions**.
 
     > Sizes are between 1 Giga Byte to 16 Terra Byte **allocated by 1 Giga Byte increment**.
 
@@ -230,7 +238,15 @@ A reliable, scalable and secure place for data.
 
     **Unlimited** number of objects , each with a **max size of 5 Terrabyte**.
 
-    It supports eleven 9s of durability and four 9s of availibility.
+    Data can be versioned.
+
+    write once, read many.
+
+    I web enabled and serverless.
+
+    For complete objects or minor changed files.
+
+    It supports **eleven 9s of durability and four 9s of availibility**.
 
     > ![storage](../images/s3Storage.jpg)
 
@@ -252,7 +268,10 @@ A reliable, scalable and secure place for data.
 5. **Amazone Elastic File System (EFS)** :
 
     File storage for EC2 instances. It provides a simple interface for creating and configuring file systems.
-    The storage is elastic.
+    The storage is elastic **(autoscales)**.
+    It is ideal for use cases in which a large number of services and resources need to access the same data at the same time.
+    Supports Multiple Read/write at the same time.
+    Linux Based Filesystem. It is a **regional ressouce**.
 
 ### [Storage classes](https://aws.amazon.com/s3/storage-classes/) :
 
@@ -264,7 +283,9 @@ A reliable, scalable and secure place for data.
     
 3. **S3 One Zone IA** : costs 20% then standard IA. costs 20% less, good for secondary backup copy or easy recreatble data.
 
-4. **S3 Glacier** : For data archiving. It allows the easy storage of big data with low cost for decades.provides three retrieval options.
+4. **S3 Glacier** : For data archiving. It allows the easy storage of big data with low cost for decades.provides three retrieval options ( from minutes to hours).
+
+5. **S3 Glacier Deep Archive** : provides retrieval in 12 hours.
 
 > **S3 intelligent tiering** is offered in order to **automate cost saving** by moving data between **two acces tiers** configured by the customer.
 
@@ -299,13 +320,30 @@ A reliable, scalable and secure place for data.
     
     Has automatic backup, snapshots, automatic host replacement.
 
-2. Amazon DynamoDB :
+2. Amazon DynamoDB : (serverless database)
 
     noSQL database. fast and predicatble performance in range of millisecond digits.
+    It is a Nonrelational database. has simple schemas. can remove any item at any time.
+    It allows Automatic Autoscaling. It is high scalable.
+    Simple queries on one table.
+    It is fully managed and uses a key value pair.
+    It scales upto 10 Trillion requests per day.
 
 3. Amazon ElastiCache :
 
     Deploy in memory cache in the cloud. Improves the performance of web apps from a fast managed in memory cache instead of slower disk based databases.
+
+4. Amazon Aurora:
+
+    It is compatible with MySQL and PostgreSQL relational databases.
+    Five times faster than standard MySQL databases and up to three times faster than standard PostgreSQL databases.
+
+    If the workloads require high availability. It replicates six copies of your data across three Availability Zones and continuously backs up your data to Amazon S3.
+
+5. Amazon RedShift:
+
+    It is a **data warehouse** for **Big Data** BI Solutions. Used for **looking backwards queries**.
+    Petab Bytes of data. It is 10x Times fatser then traditional databases.
 
 #     
 ## [Networking](https://aws.amazon.com/products/networking/) services 
@@ -314,13 +352,26 @@ It enables customers to build a virutal private network in the cloud ([VPC](http
 
 It provides security features for group access and network access control lists.
 
-Amazon53 is a **DNS service** that routes users to applications by translating human readble names into IP addresses.
+Amazon Route53 is a **DNS service** that routes users to applications by translating human readble names into IP addresses. 
             
 > ![db](../images/network.jpg)
 
 ### **Amazon Virtual private Network (VPC):**
 
-- Customers have complete control over their virtual network : 
+- **Internet gateway** :
+    
+    To allow public traffic from the internet to access your VPC, you attach an internet gateway to the VPC.
+
+- **Virtual private gateway** :
+
+    To access private resources in a VPC.It encrypts (or protects) internet traffic from all other requests around it. 
+    **It allows traffic** into the VPC only if it is coming **from an approved network**.
+    
+- AWS **Direct Connect**:
+
+    It is a service that enables the establishment of a dedicated private connection between customers data center and a VPC. 
+
+- Customers have **complete control** over their virtual network : 
     
     1. Select their IP ranges.
     2. Create subnets.
@@ -328,20 +379,23 @@ Amazon53 is a **DNS service** that routes users to applications by translating h
         
 - Ressouces can be launched into a specified [subnets](https://en.wikipedia.org/wiki/Subnetwork):
     
-    1. **public subnet** : for for ressources connected to internet 
-    2. **private subnet** : ressources that are not connected to internet.
+    1. **public subnet** : for for ressources connected to internet ( typically front end ).
+    2. **private subnet** : ressources that are not connected to internet ( hidden from customers, backend ... ).
 
 ### **[Amazon network security](https://aws.amazon.com/answers/networking/vpc-security-capabilities/)**
-- **Amazon Network security groups:**
+- **Amazon Network access control Lists (NACL):** (stateless)
+
+    - controls traffic at a subnet level. Evaluates packets. 
+    - By default it enables all inbound and outbound traffic.
+    - For custom network ACLs, all inbound and outbound traffic is denied until you add rules to specify which traffic should be allowed.
+
+- **Amazon Network security groups:** (statefull)
 
     - controls traffic at the instance level like a firewall.
     - 5 security groups can be set per instance.
-    - If not set a default security froup will be applied. 
+    - If not set a default security froup will be applied. ( blocking all ports and traffics )
+    - They allow all outbound traffic.
       
-- **Amazon Network access control Lists (NACL):**
-
-    - controls traffic at a subnet level.
-
 - **VPC flow log** 
     - captures netwokr information and store it in **Amazon CloudWatch** Log. It can be used to check why a traffic is not reaching an instance which might be causes by over restrictive security groups.
 
