@@ -50,13 +50,13 @@ New IT ressources are available within minutes.
         > 
         > On Instance runs in One AZ.
 
--    ### Points of Presence (POP):
+- ### Points of Presence (POP):
 
-        Edge locations and regional Edge cache servers are used by **Amazon CloudFront (global content delivery service)** to store cached data, video, apps and APS with low latency transfer speed closer to customers. It accelerate communication and content delivery.
+   Edge locations and regional Edge cache servers are used by **Amazon CloudFront (global content delivery service)** to store cached data, video, apps and APS with low latency transfer speed closer to customers. It accelerate communication and content delivery.
   
--   ### Amazon Outpost :
+- ### Amazon Outpost :
         
-        AWS Outposts is a fully managed service that offers the same AWS infrastructure, AWS services, APIs, and tools to virtually any datacenter, co-location space, or on-premises facility for a truly consistent hybrid experience. AWS Outposts is ideal for workloads that require low latency access to on-premises systems, local data processing, data residency, and migration of applications with local system interdependencies.    
+  AWS Outposts is a fully managed service that offers the same AWS infrastructure, AWS services, APIs, and tools to virtually any datacenter, co-location space, or on-premises facility for a truly consistent hybrid experience. AWS Outposts is ideal for workloads that require low latency access to on-premises systems, local data processing, data residency, and migration of applications with local system interdependencies.    
 
 ## AWS core categories :
 
