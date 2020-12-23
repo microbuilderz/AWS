@@ -60,5 +60,25 @@
 + **Amazon EKS** : Elastic Kubernetes service
 + **Amazon FarGate**
 
+## AWS Cloud practitioner domain
+
+> ![examDomain](../images/examDomain.jpg)
+
+### **Recommended experience**
+
+Candidates for the AWS Certified Cloud Practitioner exam should have a basic understanding of IT services and their uses in the AWS Cloud platform. 
+
+We recommend that you have at least **six months of experience** with the AWS Cloud in any role, including project managers, IT managers, sales managers, decision makers, and marketers. These roles are in addition to those working in finance, procurement, and legal departments.
+
+
+### **Exam details**
+
+The AWS Certified Cloud Practitioner exam consists of **65 questions** to be completed in 90 minutes. The minimum passing score is 70%.
+
+### **Whitepapers and resources**
+
+- [Overview of Amazon Web Services](https://d1.awsstatic.com/whitepapers/aws-overview.pdf) 
+- [How AWS pricing Works](http://d1.awsstatic.com/whitepapers/aws_pricing_overview.pdf)
+- [Compare AWS Supportplan](https://aws.amazon.com/premiumsupport/plans/)
 
 

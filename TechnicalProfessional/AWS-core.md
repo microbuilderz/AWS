@@ -95,6 +95,8 @@ They are the compute building blocks and comes with a large variaty of hardware 
 
     **Distributes** application traffic across **multiple targets** : EC2 instances, containers, IP adresses and lamda functions. in one or more availability zones.
 
+    It is **scalable** and acts at the **region level**.
+
     The load balancer sends requests only to **healthy instances** which are configured by the customer.
 
     They can offload encryption and decryption so that instances only needs to focus on their main work.
@@ -422,15 +424,15 @@ Amazon Route53 is a **DNS service** that routes users to applications by transla
 ### **[Amazon network security](https://aws.amazon.com/answers/networking/vpc-security-capabilities/)**
 - **Amazon Network access control Lists (NACL):** (stateless)
 
-    - controls traffic at a subnet level. Evaluates packets. 
+    - Controls traffic at a subnet level. Evaluates packets. 
     - By default it enables all inbound and outbound traffic.
     - For custom network ACLs, all inbound and outbound traffic is denied until you add rules to specify which traffic should be allowed.
 
 - **Amazon Network security groups:** (statefull)
 
-    - controls traffic at the instance level like a firewall.
+    - Controls traffic acts at AWS instance level.
     - 5 security groups can be set per instance.
-    - If not set a default security froup will be applied. ( blocking all ports and traffics )
+    - If not set a default security group will be applied. ( blocking all ports and traffics )
     - They allow all outbound traffic.
       
 - **VPC flow log** 
@@ -452,6 +454,14 @@ Amazon Route53 is a **DNS service** that routes users to applications by transla
 
 - **Scale Quickly**: Security scales with your AWS Cloud usage. No matter the size of your business, the AWS infrastructure is designed to keep customers data safe.
 
+AWS **Shield**
+
+AWS Shield is a service that protects applications against **DDoS attacks**. AWS Shield provides two levels of protection:
+
+- AWS **Shield Standard** automatically protects all AWS customers at **no cost**. It protects your AWS resources from the most common, frequently occurring types of DDoS attacks. 
+
+- AWS **Shield Advances** is a paid service that provides detailed attack diagnostics and the ability to detect and mitigate sophisticated DDoS attacks. 
+
 > ![db](../images/security.jpg)
 
 ### **AWS Identity and access management ([IAM](https://aws.amazon.com/iam/))**
@@ -460,7 +470,7 @@ Manages access to AWS services and ressources. Throught IAM, user and groups can
 It allows :
 
 - **Fine grained access to AWS ressources**. ( limiting users to certain ressources, specific access at a specific time of day , ...)
-- Additional security with **Multi factor Authentication** for priviledged users (root).
+- Additional security with **Multi factor Authentication** for users (especially root).
 - Possibility to **analyze access**.
 - **Integration with corporate directories** to allow **[federated access](https://en.wikipedia.org/wiki/Federated_identity)** like Microsoft active directory.
 
@@ -487,6 +497,35 @@ It allows :
 
 ### **Compliance**
 
+ AWS **Compliance center** can be used to find AWS compliance.
+
+ AWS **Artifact** is a service that provides **on-demand access** to AWS security and compliance reports and select online agreements. AWS Artifact consists of two main sections: **AWS Artifact Agreements** and AWS **Artifact Reports**.
+
+ - In AWS Artifact Agreements, you can review, accept, and manage agreements for an individual account and for all your accounts in AWS Organizations. Different types of agreements are offered to address the needs of customers who are subject to specific regulations
+
+ - AWS Artifact Reports provide compliance reports from third-party auditors. These auditors have tested and verified that AWS is compliant with a variety of global, regional, and industry-specific security standards and regulations. AWS Artifact Reports remains up to date with the latest reports released. You can provide the AWS audit artifacts to your auditors or regulators as evidence of AWS security controls. 
+ 
+### Denial-of-service attacks (DoS)
+
+ Is a deliberate attempt to make a website or application unavailable to users.
+
+### AWS **Key Management Service** (AWS KMS)
+
+ It enables customers to perform **encryption operations** through the use of **cryptographic keys**.
+
+### AWS **WAF**
+
+ It is a web application firewall that **monitors network requests** that come into web applications by using a web **access control list** (ACL) to protect AWS resources. 
+
+### Amazon **Inspector**
+
+ Amazon Inspector helps to improve the security and compliance of applications by running automated security assessments. It checks applications for security vulnerabilities and deviations from security best practices, such as open access to Amazon EC2 instances and installations of vulnerable software versions. 
+
+### Amazon **Guard Duty**
+
+ It is a service that provides **intelligent threat detection** for your AWS infrastructure and resources. It identifies threats by continuously monitoring the network activity and account behavior within AWS environment.
+
+
 #     
 ## [Management Interfaces](https://docs.aws.amazon.com/)
 
@@ -508,8 +547,173 @@ It allows :
 
     It can build an environment by writing lines of code instead of using the AWS Management Console to individually provision resources.
     It provisions resources in a safe, repeatable manner, enabling Customers to frequently build their infrastructure and applications without having to perform manual actions or write custom scripts. It determines the right operations to perform when managing customers stack and rolls back changes automatically if it detects errors.
-    
 #
+## Monitoring and analytics
+
+### Amazon **[CloudWatch](https://aws.amazon.com/cloudwatch/)**
+
+It is a web service that enables you to **monitor and manage various metrics** and configure **alarm actions** based on data from those metrics using **(SNS)**.
+
+It can create alarms that automatically perform actions if the value of a metric has gone above or below a predefined threshold.
+
+The **CloudWatch dashboard** feature enables to access all the metrics for your resources from a single location in a GUI interface.
+
+It provides **central access** to metrics and logs, **gives visibility** in applications, infrastructure and services. It reduces **Mean Time To resolution (MTTR)** and improves **Total Cost of Ownership (TCO)**
+
+### Amazon **CloudTrail**
+
+AWS CloudTrail **records API calls** for customers account. The recorded information includes the identity of the API caller, the time of the API call, the source IP address of the API caller, and more.
+
+Events are typically updated in CloudTrail within 15 minutes after an API call.
+
+Within CloudTrail, **CloudTrail Insights** can be enabled. This optional feature allows CloudTrail to automatically detect unusual API activities in AWS accounts. 
+
+It helps **Filter logs** to assist with **operational analysis and troubleshooting**.
+
+### AWS **[Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor)** 
+
+AWS Trusted Advisor is a web service that inspects your AWS environment and provides real-time recommendations in accordance with AWS best practices.
+
+> ![advisor](../images/trustAdvisers.jpg)
+
+Trusted Advisor compares its findings to AWS best practices in five categories: **cost optimization**, **performance**, **security**, **fault tolerance**, and **service limits**. For the checks in each category, Trusted Advisor offers a list of recommended actions and additional resources to learn more about AWS best practices. 
+#
+## **Pricing and support**
+
+### AWS **Free Tier**
+
+The AWS Free Tier enables you to begin using certain services without having to worry about incurring costs for the specified period.
+
+Three types of offers are available: 
+
+- Always Free
+- 12 Months Free
+- Trials
+
+## AWS **pricing concept**
+
+- Pay for usage (On Demand): 
+    For each service, you pay for exactly the amount of resources that you actually use, without requiring long-term contracts or complex licensing. 
+- Pay less when Reserving:
+    Some services offer reservation options that provide a significant discount compared to On-Demand Instance pricing.
+- Pay less with volume-based discounts when using more:
+    Some services offer tiered pricing, so the per-unit cost is incrementally lower with increased usage.
+
+## AWS **Pricing Calculator**
+
+The AWS Pricing Calculator lets explore AWS services and **create an estimate** for the cost of use cases on AWS. AWS estimates can be organized by groups that can be defined. A group can reflect how the company is organized, such as providing estimates by **cost center**.
+
+exmaple : 
+
+- AWS Lambda : It offers **1 Million free request per Month**. 
+- Amazon EC2 : can choose a Spot Instance that would provide  up to 90% cost savings while still meeting the availability requirements of your workload.
+- Amazon S3 : 
+    1. Customers only for only the **storage that they use**.
+    2. Customers pay for **Requests and data retrievals**.
+    3. There is **no cost to transfer** data between different **Amazon S3 buckets** or from **Amazon S3** to other services **within the same AWS Region**
+    4. **Management and replication features are paid features**.
+
+### **Billing Dashboard**
+
+The AWS Billing & Cost Management dashboard is used to **pay AWS bills**, **monitor usage**, and **analyze and control** costs.
+
+### **Consolidated billing**
+
+It's a **free Feature**.
+
+The consolidated billing feature of AWS Organizations enables to receive a **single bill** for **all AWS accounts in an organization**.
+
+The **default maximum number** of accounts allowed for an organization is 4.
+
+One benefit of consolidated billing is the ability to **share bulk discount pricing, Savings Plans, and Reserved Instances across the accounts in an organization**.
+
+### AWS **Budgets**
+
+Customer can create budgets to plan their service usage, service costs, and instance reservations.
+
+It set custom alerts when the usage exceeds 
+
+### AWS **Cost Explorer**
+
+It is a tool that enables customer to visualize, understand, and manage your AWS costs and usage over time.
+It allows also to create custom reports.
+It can show costs by user defined tags.
+
+### AWS **Support**
+
+- Basic (free for everyone ): Customer service/ Documentation / whitepapers/ limited access to trusted advisers / Personal DashBoard.
+- Developer : email customers support, reponse in 24h.
+- Business: phone access (4h response if production system is impaire and 1h if production system is down ) , It provides infrastructure event management. It have access to all AWS Trusted Advisor 
+- Entreprise : 15 min reponse time.dedicated technical account manager.
+They provide guidance, architectural reviews, and ongoing communication with companis as they plan, deploy, and optimize their applications. 
+
+### AWS **Marketplace**
+
+AWS Marketplace is a digital catalog that includes thousands of software listings from independent software vendors. It can be used to find, test, and buy software that runs on AWS. 
+
+#
+## Migration and innovation
+
+### AWS **Cloud Adoption Framework**
+It guives guidance on who to loop on the framework.
+There are Six core perspectives of the Cloud Adoption Framework.
+
+- Business Perspective : focus on business capabilities
+- People Perspective: focus on business capabilities
+- Governance Perspective: focus on business capabilities
+- Plattform Perspective: focus on technical capabilities
+- Security Perspective: focus on technical capabilities
+- Operation Perspective: focus on technical capabilities
+
+### **Migration for strategies (6R)**
+
+- Rehosting : also known as “lift-and-shift” involves moving applications without changes into the cloud. 
+- Replatforming : “lift, tinker, and shift,” involves making a few cloud optimizations to realize a tangible benefit. Optimization is achieved without changing the core architecture of the application.
+- Refactoring/re-architecting : Involves reimagining how an application is architected and developed by using cloud-native features
+- Repurchasing : involves moving from a traditional license to a software-as-a-service model. 
+- Retaining :  consists of keeping applications that are critical for the business in the source environment.
+- Retiring : is the process of removing applications that are no longer needed.
+
+### **AWS Snow Family**:
+
+The AWS Snow Family is a collection of physical devices that help to **physically transport** up to exabytes of data into and out of AWS.
+
+AWS Snow Family is composed of :
+- AWS Snowcone : AWS Snowcone is a small, rugged, and secure edge computing and data transfer device. It features 2 CPUs, 4 GB of memory, and 8 TB of usable storage.
+- AWS Snowball : 
+   
+    1. Snowball Edge Storage Optimized devices are well suited for large-scale data migrations and recurring transfer workflows, in addition to local computing with higher capacity needs. 80 TB of hard disk drive (HDD) and 1 TB of SATA solid state drive (SSD)  
+    2. Snowball Edge Compute Optimized : provides powerful computing resources for use cases such as machine learning, full motion video analysis, analytics, and local computing stacks. 42-TB usable HDD capacity, 7.68 TB of usable NVMe SSD.
+- AWS Snowmobile : It  is an exabyte-scale data transfer service used to move large amounts of data to AWS. (100 Peta Byte)
+#
+## More Services
++ ### Amazon **textract**
+  Document based service
++ ### Amazon **sage maker** : 
+  For building machine learning.
++ ### Amazon **Augmenated AI**
++ ### Amazon **[Lex](https://aws.amazon.com/lex)** : 
+  alexa service
++ ### Amazon **DeepRacer**
++ ### Amazon **ground station** 
++ ### ....
+#
+## AWS **well-architectued Framework**
+
+Tool fo evaluate the framework.based on following framework pillars:
+
+1. Operational Excellence :
+    It is the ability to run and monitor systems to deliver business value and to continually improve supporting processes and procedures. 
+2. Security :
+    The Security pillar is the ability to protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies. 
+3. Reliability:
+    - Recover from infrastructure or service disruptions Dynamically 
+    - acquire computing resources to meet demand
+    - Mitigate disruptions such as misconfigurations or transient network issues   
+4. Performance Efficiency:
+    Is the ability to use computing resources efficiently to meet system requirements and to maintain that efficiency as demand changes and technologies evolve. 
+5. Cost Optimization:
+    Cost optimization is the ability to run systems to deliver business value at the lowest price point.
 ## Conclusion
 
 - AWS offers more then 165 services: from compute, storage, machine learning, analytics, IoT  

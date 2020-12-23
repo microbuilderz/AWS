@@ -1,0 +1,1 @@
+training completion https://www.aws.training/Transcript/CompletionCertificateHtml?transcriptid=YkQOprH-skCMBpjWh0sXVw2
