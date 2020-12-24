@@ -95,7 +95,7 @@ They are the compute building blocks and comes with a large variaty of hardware 
 
     **Distributes** application traffic across **multiple targets** : EC2 instances, containers, IP adresses and lamda functions. in one or more availability zones.
 
-    It is **scalable** and acts at the **availability zone level**.
+    It is **scalable** and acts at the **region level** (distribute traffic across multiple AZ within a single region).
 
     The load balancer sends requests only to **healthy instances** which are configured by the customer.
 
