@@ -81,4 +81,32 @@ The AWS Certified Cloud Practitioner exam consists of **65 questions** to be com
 - [How AWS pricing Works](http://d1.awsstatic.com/whitepapers/aws_pricing_overview.pdf)
 - [Compare AWS Supportplan](https://aws.amazon.com/premiumsupport/plans/)
 
+## Exam Practice 
+
+- [link1](https://digitalcloud.training/aws-cloud-practitioner-free-practice-questions/)
+
+## Remarks and more stuff
+
+- AWS **Elastic Beanstalk** Provide code and configuration settings, Developers upload applications, and **BeanStalk** deploys the resources necessary to Adjust capacity, load balance, perform Automatic scaling and Application health monitoring. **ZIP and WAR** files can be uploaded.
+- AWS **CloudFormation** It can build an environment by writing lines of code instead of using the AWS Management Console to individually provision resources, It enables Customers to frequently build their infrastructure and applications without having to perform manual actions or write custom scripts
+- AWS **CodeCommit** is a fully-managed source control service that hosts secure Git-based repositories. It does not actually automate the build of the code or infrastructure on which it runs.
+- AWS **CodeDeploy** is a fully managed deployment service that automates software deployments to a variety of compute services such as Amazon EC2, AWS Lambda, and on-premises servers
+- AWS **CloudWatch** is a monitoring service for AWS cloud resources and the applications run on AWS.CloudWatch is used for performance monitoring, not automating operational tasks
+- AWS **OpsWorks** is a configuration management service that provides managed instances of Chef and Puppet.
+- AWS **Config** is a fully-managed service that provides an AWS resource inventory, configuration history, and configuration change notifications to enable security and regulatory compliance.
+- AWS **Artifact** is a central resource for compliance-related information that matters to customers.
+- AWS **CloudHSM** is a cloud-based **hardware security module** (HSM) that enables the easy generation and use of own encryption keys on the AWS Cloud
+- AWS **Cognito** adds user sign-up, sign-in, and access control to web and mobile apps quickly and easily.
+- AWS **DirectoryService**
+- AWS **ElastiCache** provides in-memory cache and database services.
+- AWS **RedShift** is a fast, scalable data warehouse
+- AWS **Systems Manager** gives you visibility and control of the infrastructure on AWS. Systems Manager provides a unified user interface so customers can view operational data from multiple AWS services and it allows to automate operational tasks across AWS resources.
+- AWS **Glacier** encrypts data automatically
+- AWS **Inspector** 
+- AWS **QuickSight**
+- AWS **QuickTrail**
+- AWS **CloudTrail**
+- AWS **CostAllocation**
+- AWS **TrustAdvisor** 
+
 

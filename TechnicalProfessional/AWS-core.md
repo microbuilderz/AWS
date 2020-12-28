@@ -534,7 +534,7 @@ It allows :
 - AWS **management console** :GUI Interface to manage cloud. ( intranet based manual configuration )
 - AWS **Command Line Interface** (CLI) interface allows access via commands. ( scriptable can be run automatically)
 - AWS **Software development Kits** (SDK) allows acces inside code ( various programming languages )
-- AWS **AWS Elastic Beanstalk** ( Managed Tool)
+- AWS **Elastic Beanstalk** ( Managed Tool)
   
     Provide code and configuration settings, and Elastic Beanstalk deploys the resources necessary to perform the following tasks:
 
