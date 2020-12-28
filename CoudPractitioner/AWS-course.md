@@ -60,6 +60,8 @@
 + **Amazon EKS** : Elastic Kubernetes service
 + **Amazon FarGate**
 
+## check [Technical Professional](../TechnicalProfessional/AWS-core.md) for further documentation
+
 ## AWS Cloud practitioner domain
 
 > ![examDomain](../images/examDomain.jpg)
@@ -83,7 +85,8 @@ The AWS Certified Cloud Practitioner exam consists of **65 questions** to be com
 
 ## Exam Practice 
 
-- [link1](https://digitalcloud.training/aws-cloud-practitioner-free-practice-questions/)
+- [20 AWS Practitioner questions](https://digitalcloud.training/aws-cloud-practitioner-free-practice-questions/)
+- [Free Practitioner exams](https://www.awsboy.com/aws-practice-exams/practitioner/)
 
 ## Remarks and more stuff
 
@@ -97,16 +100,18 @@ The AWS Certified Cloud Practitioner exam consists of **65 questions** to be com
 - AWS **Artifact** is a central resource for compliance-related information that matters to customers.
 - AWS **CloudHSM** is a cloud-based **hardware security module** (HSM) that enables the easy generation and use of own encryption keys on the AWS Cloud
 - AWS **Cognito** adds user sign-up, sign-in, and access control to web and mobile apps quickly and easily.
-- AWS **DirectoryService**
+- AWS **DirectoryService** for Microsoft Active Directory, also known as AWS Managed Microsoft Active Directory (AD), enables your directory-aware workloads and AWS resources to use managed Active Directory (AD) in AWS
 - AWS **ElastiCache** provides in-memory cache and database services.
 - AWS **RedShift** is a fast, scalable data warehouse
 - AWS **Systems Manager** gives you visibility and control of the infrastructure on AWS. Systems Manager provides a unified user interface so customers can view operational data from multiple AWS services and it allows to automate operational tasks across AWS resources.
 - AWS **Glacier** encrypts data automatically
-- AWS **Inspector** 
-- AWS **QuickSight**
-- AWS **QuickTrail**
-- AWS **CloudTrail**
-- AWS **CostAllocation**
-- AWS **TrustAdvisor** 
+- AWS **Inspector** automatically assesses applications for exposure, vulnerabilities, and deviations from best practices.
+- AWS **QuickSight** is a scalable, serverless, embeddable, machine learning-powered business intelligence (BI) service built for the cloud. QuickSight lets you easily create and publish interactive BI dashboards that include Machine Learning-powered insights
+- AWS **CloudTrail** is a service that enables **governance, compliance, operational auditing, and risk auditing** of your AWS account. With CloudTrail, you can **log**, continuously monitor, and retain account activity related to actions across your AWS infrastructure. CloudTrail provides event history of your AWS account activity, including actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services
+- AWS **Trusted Advisor** compares its findings to AWS best practices in five categories: **cost optimization**, **performance**, **security**, **fault tolerance**, and **service limits**. For the checks in each category, Trusted Advisor offers a list of recommended actions and additional resources to learn more about AWS best practices. 
+- **Amazon Kinesis Data Streams** (KDS) is a massively scalable and durable real-time data streaming service. KDS can continuously capture gigabytes of data per second from hundreds of thousands of sources such as website clickstreams, database event streams, financial transactions, social media feeds, IT logs, and location-tracking events. The data collected is available in milliseconds to enable real-time analytics use cases such as real-time dashboards, real-time anomaly detection, dynamic pricing, and more. 
+- **LightSail** Lightsail is an easy-to-use cloud platform that offers you everything needed to build an application or website, plus a cost-effective, monthly plan.
+- AWS **Health DashBoard**
+- HyperVisorLayer
 
 
