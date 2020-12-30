@@ -122,7 +122,8 @@ They are the compute building blocks and comes with a large variaty of hardware 
 
 7. **AWS Fargate** (serverless) :
 
-     It works with both Amazon ECS and Amazon EKS.
+    It works with both Amazon ECS and Amazon EKS.
+    It is a serverless compute engine for containers. It works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS). Fargate makes it easy for you to focus on building your applications. Fargate removes the need to provision and manage servers, lets you specify and pay for resources per application, and improves security through application isolation by design. Fargate allocates the right amount of compute, eliminating the need to choose instances and scale cluster capacity. You only pay for the resources required to run your containers, so there is no over-provisioning and paying for additional servers. Fargate runs each task or pod in its kernel providing the tasks and pods their own isolated compute environment. This enables your application to have workload isolation and improved security by design.
 
 ### AWS EC2 Benefits :
 
@@ -265,7 +266,9 @@ A reliable, scalable and secure place for data.
 
 4. **AWS storage Gateway**: 
 
-    Transfer data between on promises sites and aws storage infrastructure (in and out). 
+    Transfer data between on promises sites and aws storage infrastructure (in and out). It is a hybrid cloud storage service that connects your existing on-premises environments with the AWS Cloud. Customers use Storage Gateway to simplify storage management and reduce costs for key hybrid cloud storage use cases. These include moving tape backups to the cloud, reducing on-premises storage with cloud-backed file shares, providing low latency access to data in AWS for on-premises applications, as well as various migration, archiving, processing, and disaster recovery use cases.
+
+AWS Storage Gateway service provides three different types of gateways – Tape Gateway, File Gateway, and Volume Gateway – that seamlessly connect on-premises applications to cloud storage, caching data locally for low-latency access.
 
 5. **Amazone Elastic File System (EFS)** :
 
@@ -276,9 +279,11 @@ A reliable, scalable and secure place for data.
     Linux Based Filesystem. It is a **regional ressouce**.
     It stores data in **multiple AZ**.
 
+    ![efs](../images/efs.jpg)
+
 ### [Storage classes](https://aws.amazon.com/s3/storage-classes/) :
 
-> ![storage](../images/s3StorageClasses.jpg)
+![storage](../images/s3StorageClasses.jpg)
 
 1. **S3 standard** : for frequently accessed data, low latency high throughput.
     
@@ -291,6 +296,10 @@ A reliable, scalable and secure place for data.
 5. **S3 Glacier Deep Archive** : provides retrieval in 12 hours.
 
 > **S3 intelligent tiering** is offered in order to **automate cost saving** by moving data between **two acces tiers** configured by the customer.
+
+> ![storageClasses](../images/storageClasses.jpg)
+
+> Amazon **Athena** is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is **serverless**, so there is no infrastructure to manage, and you pay only for the queries that you run.
 
 #        
 ## [Database](https://aws.amazon.com/products/databases/) Services  
@@ -322,6 +331,8 @@ A reliable, scalable and secure place for data.
     Supports Amazone Aurora/Postgres/MariaDB/MySQL/Oracle/MySQL server. Scalable, cost efficient and resizeable capacity.
     
     Has automatic backup, snapshots, automatic host replacement.
+
+    **Read Replicas** allow you to create read-only copies that are synchronized with your master database. Read Replicas are used for **improved read performance**. You can also place your read replica in a different AWS Region closer to your users for better performance. Read Replicas are an example of horizontal scaling of resources.
 
 2. Amazon DynamoDB : (serverless database)
 
@@ -397,6 +408,8 @@ Amazon Route53 is a **DNS service** that routes users to applications by transla
 
 ### **Amazon Virtual private Network (VPC):**
 
+lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define. You have complete control over your virtual networking environment, including the selection of your IP address range, creation of subnets, and configuration of route tables and network gateways.
+
 - **Internet gateway** :
     
     To allow public traffic from the internet to access your VPC, you attach an internet gateway to the VPC.
@@ -408,7 +421,11 @@ Amazon Route53 is a **DNS service** that routes users to applications by transla
     
 - AWS **Direct Connect**:
 
-    It is a service that enables the establishment of a dedicated private connection between customers data center and a VPC. 
+    It is a service that enables the establishment of a dedicated private connection between customers data center and a VPC.
+
+- AWS **VPN**:
+
+    AWS VPN solutions establish secure connections between on-premises networks, remote offices, client devices, and the AWS global network. AWS VPN is comprised of two services: AWS Site-to-Site VPN and AWS Client VPN. Together, they deliver a highly-available, managed, and elastic cloud VPN solution to protect your network traffic. 
 
 - Customers have **complete control** over their virtual network : 
     
@@ -436,7 +453,7 @@ Amazon Route53 is a **DNS service** that routes users to applications by transla
     - They allow all outbound traffic.
       
 - **VPC flow log** 
-    - captures netwokr information and store it in **Amazon CloudWatch** Log. It can be used to check why a traffic is not reaching an instance which might be causes by over restrictive security groups.
+    - captures network information and store it in **Amazon CloudWatch** Log. It can be used to check why a traffic is not reaching an instance which might be causes by over restrictive security groups. Think **resource performance monitoring**, **events, and alerts**; think CloudWatch.
 
 - **Host based Firewalls**
     - can be enabled at the operating system. example iptables, windows fierwalls or third party ones.
@@ -605,7 +622,7 @@ The AWS Pricing Calculator lets explore AWS services and **create an estimate** 
 
 exmaple : 
 
-- AWS Lambda : It offers **1 Million free request per Month**. 
+- AWS Lambda : It offers **1 Million free request per Month**. The lambda has a maximum execution time of 15 minutes, so it can be used to run this log backup process. 
 - Amazon EC2 : can choose a Spot Instance that would provide  up to 90% cost savings while still meeting the availability requirements of your workload.
 - Amazon S3 : 
     1. Customers only for only the **storage that they use**.
@@ -637,13 +654,17 @@ It set custom alerts when the usage exceeds
 
 It is a tool that enables customer to visualize, understand, and manage your AWS costs and usage over time.
 It allows also to create custom reports.
-It can show costs by user defined tags.
+It can show costs by user defined tags.AWS Cost Explorer includes a default report that helps you visualize the costs and usage associated with your **top five cost-accruing AWS services**, and gives you **a detailed breakdown on all services in the table view**. The reports let you adjust the time range to view historical data **going back up to twelve months** to gain an understanding of your cost trends.
 
-### AWS **Support**
+### AWS **Cost and Usage Reports**
+
+The AWS Cost and Usage Reports (AWS CUR) contains **the most comprehensive set of cost and usage data available**. You can use Cost and Usage Reports **to publish your AWS billing reports to an Amazon Simple Storage Service (Amazon S3) bucket that you own**. You can receive reports that break down your costs by the hour or month, by product or product resource, or by tags that you define yourself
+
+### AWS **[Support](https://aws.amazon.com/premiumsupport/plans/)**
 
 - Basic (free for everyone ): Customer service/ Documentation / whitepapers/ limited access to trusted advisers / Personal DashBoard.
-- Developer : email customers support, reponse in 24h.
-- Business: phone access (4h response if production system is impaire and 1h if production system is down ) , It provides infrastructure event management. It have access to all AWS Trusted Advisor 
+- Developer : email customers support, reponse in 24h. AWS Developer Support plan allows one primary contact to open unlimited cases.
+- Business: phone access (4h response if production system is impaire and 1h if production system is down ) , It provides infrastructure event management. It have access to all AWS Trusted Advisor. It Allows unlimited contacts to open unlimited cases
 - Entreprise : 15 min reponse time.dedicated technical account manager.
 They provide guidance, architectural reviews, and ongoing communication with companis as they plan, deploy, and optimize their applications. 
 
