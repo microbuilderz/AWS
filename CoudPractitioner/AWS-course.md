@@ -1,10 +1,83 @@
 # AWS Cloud Practitioner
+## AWS **Acceptable Use Policy** 
+
+The Acceptable Use Policy describes prohibited uses of the web services offered by Amazon Web Services, Inc. and its affiliates (the “Services”) and the website located at http://aws.amazon.com (the “AWS Site”). 
+This policy is present at [aup](https://aws.amazon.com/aup/) and is updated on a need basis by AWS.
+- No illegal, harmfull or Offensive User or content
+- No security violations.
+- No Network, e-Mail or Message absue
+
+## Types of cloud computing
+
+- IaaS : Virtualisation, Servers, Storage and Networking is managed by the cloud company (example EC2)
+- PaaS : IaaS + OS + MiddleWare + Runtime is managed by the cloud company (example Elastik bean stalk)
+- SaaS : eveything is managed by the cloud company (example Rekognition)
+## Pricing fundamentals
+
+- For compute -> pay for compute time
+- For Storage -> pay for data stored in the cloud
+- Network -> Data transfer out of the cloud (**data transfer in is free**)
+
+## AWS Identity and access management ([IAM](https://aws.amazon.com/iam/)) 
+
+It is a **global service**.
+Root users **should not be used** or shared.
+Users and groups should be created. groups only **contains users**.
+Users and groups can be assigned json documents called **policies**.Policies defines permissions.
+In AWS the **least privilege principle** should be used.
+Following **best practice**, groups should be created.
+IAM Password Policies can be setup & Multi factor authentication.
+MFA = password+ security device. the account will not be compromised if the password is lost.
+MFA options : 
+- **Virtual MFA device** ( google authenticator for mobile or Authy for multi devices)
+- **U2F** : usb physical device
+- **Hardware Key Fab** MFA & Hard Key Fab MFA for AWS govCloud(US).
+### IAM Roles
+
+Some AWS services needs access on the users behalf. Example give permission to EC2 instances, Lambda or cloudFomation.
+They grant permissions to trusted entities.
+### IAM Security tools :
+
+- IAM **credential report** (Account level) : it lists all users and credential reports
+- IAM **access advisor** (User level) : it shows the service permissions granted to a user and last access time.  
+### Acessing AWS account
+
+- AWS management console using password and MFA. (AWS Internet site)
+- AWS command line User interface (CLI) using access keys. ( CLI can be installed on multiple OS)
+- AWS SDK (used when you write code) by using access keys. ( Software developper Kit )
+
+Acess Keys ID = username
+Secret Acess Keys = password
+### IAM Best practices
+
+- do not use root account only for AWS setup account.
+- one physical user = one user.
+- assign users to group
+- user strong password policies
+- use MFA
+- create roles for applications.
+- use access keys for programmatic access
+- use IAM **credential report** and IAM **access advisor** to audit user access.
 
 ## [Cloud Computing](../TechnicalProfessional/AWS-core.md#cloud-) 
-## EC2
+## Elastic Cloud Compute (EC2)
+
+It is an IaaS.
+
 ### [EC2 Instance](../TechnicalProfessional/AWS-core.md#aws-compute-services)
 ### [EC2 Instance Benefits](../TechnicalProfessional/AWS-core.md#aws-ec2-benefits-)
 ### [EC2 Instance Types](../TechnicalProfessional/AWS-core.md#aws-ec2-instance-types--)
+### EC2 Security groups
+
+They are **active firewalls** on EC2 instances
+Control the traffic into and outo EC2 instances.
+They have rules by ip or by security groups.
+They can be attached to multiple instances.
+
+### EC2 instance connect
+
+Browser based ssh connection.
+
 ### EC2 Pricing
 
 + **on Demand** :
@@ -21,6 +94,10 @@
 
     Reserved Instances are a **billing discount** applied to the use of On-Demand Instances in your account. Customers can purchase Standard Reserved and Convertible Reserved Instances for a 1-year or 3-year term, and Scheduled Reserved Instances for a 1-year term. **Customers realize greater cost savings with the 3-year option**.
 
+    + **convertible** reserved instance : change the EC2 instance type 54% discount
+    + **scheduled reserved instances** : launched withtin a timeslot.
+    
+
 + **Scheduled Reserved Instances** 
 
     Scheduled Reserved Instances (Scheduled Instances) enable you to purchase capacity reservations that recur on a daily, weekly, or monthly basis, with a specified start time and duration, for a one-year term. Scheduled Instances are a good choice for workloads that do not run continuously, but do run on a regular schedule
@@ -31,7 +108,12 @@
 
 + **Dedicated Hosts**
 
-    Dedicated Hosts are physical servers with Amazon EC2 instance capacity that is fully dedicated to your Customers. **They are the most expensive**. Dedicated Hosts allow you to use your eligible software licenses from vendors such as Microsoft and Oracle on Amazon EC2
+    Dedicated Hosts are **physical servers** with Amazon EC2 instance capacity that is fully dedicated to your Customers. **They are the most expensive**. Dedicated Hosts allow you to use your eligible software licenses from vendors such as Microsoft and Oracle on Amazon EC2.
+    **3 years allocation time**.
+
++ **dedicated Instances**
+
+    like dedicated Hosts, but no access to the hardware. hardware will no be shared.
 
 + **AWS Cost Explorer**
 
@@ -129,7 +211,7 @@ The AWS Certified Cloud Practitioner exam consists of **65 questions** to be com
 - AWS **Health DashBoard**
 - HyperVisorLayer
 - Resource Group
-- AWS **Acceptable Use Policy** The Acceptable Use Policy describes prohibited uses of the web services offered by Amazon Web Services, Inc. and its affiliates (the “Services”) and the website located at http://aws.amazon.com (the “AWS Site”). This policy is present at [aup](https://aws.amazon.com/aup/) and is updated on a need basis by AWS.
+
 - **Elasticity** is The ability to acquire resources as you need and release when they are no longer needed is termed as Elasticity of the Cloud. With cloud computing, you don’t have to over-provision resources upfront to handle peak levels of business activity in the future. Instead, you provision the number of resources that you need. You can scale these resources up or down instantly to grow and shrink capacity as your business needs change.
 - **Agility** refers to the ability to rapidly develop, test and launch software applications that drive business growth Another way to explain "Agility" - AWS provides a massive global cloud infrastructure that allows you to quickly innovate, experiment and iterate. Instead of waiting weeks or months for hardware, you can instantly deploy new applications. This ability is called Agility.
 - **Reliability** - Refers to the ability of a system to recover from infrastructure or service disruptions, by dynamically acquiring computing resources to meet demand, and mitigate disruptions.
