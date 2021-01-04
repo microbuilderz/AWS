@@ -19,6 +19,8 @@
 ## AWS Cloud Pratitioner
 
 1. [AWS-Course](./CoudPractitioner/AWS-course.md)
+2. [AWS-training](https://www.aws.training/Details/eLearning?id=60697)
+3. [Udemy-training](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/)
 ## AWS Technical Professional
 
 1. [AWS Core Technologies](./TechnicalProfessional/AWS-core.md)

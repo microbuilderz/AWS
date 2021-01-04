@@ -205,6 +205,7 @@ The AWS Certified Cloud Practitioner exam consists of **65 questions** to be com
 
 - [20 AWS Practitioner questions](https://digitalcloud.training/aws-cloud-practitioner-free-practice-questions/)
 - [Free Practitioner exams](https://www.awsboy.com/aws-practice-exams/practitioner/)
+- [Udemy Practice exams](https://www.udemy.com/course/practice-exams-aws-certified-cloud-practitioner)
 
 ## Remarks and more stuff
 
