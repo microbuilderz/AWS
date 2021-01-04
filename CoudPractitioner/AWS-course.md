@@ -119,6 +119,10 @@ Browser based ssh connection.
 
     like dedicated Hosts, but no access to the hardware. hardware will no be shared.
 
++ **AWS Cost Explorer**
+
+    It can analyze your Amazon EC2 usage over the past 7, 30, or 60 days. AWS Cost Explorer also provides customized recommendations for Savings Plans.
+
 ## [EC2 Storage](../TechnicalProfessional/AWS-core.md#storage-services-)
 
 ### Amazon Machine Images (AMI) 
@@ -140,30 +144,17 @@ can be mounted to 100s of EC2. shared EFS. works across multiple AZ. expensive. 
 
 ## Elastic Load Balancer & Auto scaling group
 
-## Elastic Load Balancer
-managed Load balancer across multiple AZ. It supports health checks.
+## [Elastic Load Balancer](../TechnicalProfessional/AWS-core.md#aws-compute-services)
+It is a Managed Load balancer across multiple AZ. It supports health checks.
 
 - Application LB : HTTP/HTTPs layer 7
 - Network LB : ultra high perfromance , TCP layer 4
 - Classic LB : layer 4 and layer 7.
 
-## Auto Scaling Group
+## [Auto Scaling Group](../TechnicalProfessional/AWS-core.md#scalable-architecture-)
 
 create or removes instances depending on demands or instance health across AZ. it can be used with elastic load balancer.
 they are defined by minimun size, desired capacity, and a maximum size.
-
-+ **AWS Cost Explorer**
-
-    It can analyze your Amazon EC2 usage over the past 7, 30, or 60 days. AWS Cost Explorer also provides customized recommendations for Savings Plans.
-
-### [EC2 Scaling](../TechnicalProfessional/AWS-core.md#scalable-architecture-)
-
-- When Customers create an Auto Scaling group, Customers can set the minimum number of Amazon EC2 instances. The minimum capacity is the number of Amazon EC2 instances that launch immediately after Customers created the Auto Scaling group. 
-- Customers can set a desired capacity
-- Custumers sets a maximum capacity for peak workloads or capacity.
-
-### [EC2 Load Balancer](../TechnicalProfessional/AWS-core.md#aws-compute-services)
-
 ### Messaging and Queuing
 
 +   **Amazon Simple Notification Service** (Amazon SNS)
