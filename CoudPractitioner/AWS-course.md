@@ -115,7 +115,7 @@ Browser based ssh connection.
     Dedicated Hosts are **physical servers** with Amazon EC2 instance capacity that is fully dedicated to your Customers. **They are the most expensive**. Dedicated Hosts allow you to use your eligible software licenses from vendors such as Microsoft and Oracle on Amazon EC2.
     **3 years allocation time**.
 
-+ **dedicated Instances**
++ **Dedicated Instances**
 
     like dedicated Hosts, but no access to the hardware. hardware will no be shared.
 
@@ -134,6 +134,7 @@ are a custimization of EC2 instances.
 EBS storage is a network drive , One EBS volume can be attached to a single instance.
 Are locked to one AZ. EBS volume are persistant. only same AZ instances cann attach to EBS.
 to transfer EBS volume data across regions, we can use snapshot to restore it in another region or AZ.
+EBS snapshots are stored in amazone S3.
 ### Instance Storage
 
 Hardware disk storage. Better IO performance. They loose their storage when detached. They are good for buffer/ cache / temporary content.
@@ -153,9 +154,59 @@ It is a Managed Load balancer across multiple AZ. It supports health checks.
 
 ## [Auto Scaling Group](../TechnicalProfessional/AWS-core.md#scalable-architecture-)
 
-create or removes instances depending on demands or instance health across AZ. it can be used with elastic load balancer.
+Create or removes instances depending on demands or instance health across AZ. it can be used with elastic load balancer.
 they are defined by minimun size, desired capacity, and a maximum size.
-### Messaging and Queuing
+
+## [Amazone Simple Storage service](../TechnicalProfessional/AWS-core.md#amazone-simple-storage-service-s3)
+
+- **Infinitly** scalable storage. 
+- Can be used for **disaster recovery**, **archive**, **hybrid** cloud storage, **media hosting**, **big data**, **software delivery** and **static websites**.
+- S3 stores **objects** in **buckets**. Buckets must be **uniqly named globally**. Buckets are created at the **region level**.
+- Bucket **key** is the **full path**.
+- Maximum object size is **5 Gig**. (**use multi part upload** for bigger then 5 Gigs).
+- By default public Bucket are blocked.
+- S3 can host static files
+
+### S3 Security
+
+- **User based** : through IAM Policies.With I am Policies there( without cross account ) is no need for Bucket policies.
+- **Ressource Based** :
+    - Bucket policies : bucket rules from s3 console to allow/deny access and AWS cross account access
+    - Object Access Control List : finer control
+    - Bucket Access Control List
+- **Encryption**
+
+### S3 Versioning
+
+Used to version files. It is enabled at bucket level.
+
+### S3 Access Logs
+
+Logs **request** to buckets in **another S3 Bucket**.
+
+### S3 Replication
+
+copying is asynchronus.
+
+- CRR : cross region replication : compliance/low latency access/replication acrosse accounts
+- CSR : same region replication : logs / live repliction between production and test accounts.
+
+### S3 Classes
+
+all have 11 9's of durability : how often you will loose a file
+
+availability : how available is the service.
+
+- S3 Standard : 99,99% availability , frequently accessed data (big data, mobile application).
+- S3 IA : 99,9% infrequent and rapid access. **lower cost but retrieval fee** ( disaster recovery).
+- S3 Intelligent tiering : 99,9% availability, **most cost saving**.
+- S3 IA One Zone : 99,5% availability (secondary backup copy).
+- Glacier : frozen data **low cost (GB/Month), there are fees for **retrieval**.
+- Glacier Deep archive **cheapest**.
+
+there are **transition rules** that can be used to **transit objects** between storage classes using **lifecycle configurations**.
+
+## Messaging and Queuing
 
 +   **Amazon Simple Notification Service** (Amazon SNS)
      
