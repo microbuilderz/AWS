@@ -74,6 +74,10 @@ Control the traffic into and outo EC2 instances.
 They have rules by ip or by security groups.
 They can be attached to multiple instances.
 
+### EC2 **user data**
+
+Script launched at the first start of instance
+
 ### EC2 instance connect
 
 Browser based ssh connection.
@@ -114,6 +118,39 @@ Browser based ssh connection.
 + **dedicated Instances**
 
     like dedicated Hosts, but no access to the hardware. hardware will no be shared.
+
+## [EC2 Storage](../TechnicalProfessional/AWS-core.md#storage-services-)
+
+### Amazon Machine Images (AMI) 
+
+are a custimization of EC2 instances.
+
+### EBS Storage
+
+EBS storage is a network drive , One EBS volume can be attached to a single instance.
+Are locked to one AZ. EBS volume are persistant. only same AZ instances cann attach to EBS.
+to transfer EBS volume data across regions, we can use snapshot to restore it in another region or AZ.
+### Instance Storage
+
+Hardware disk storage. Better IO performance. They loose their storage when detached. They are good for buffer/ cache / temporary content.
+
+### EFS storage
+
+can be mounted to 100s of EC2. shared EFS. works across multiple AZ. expensive. it is scalable.
+
+## Elastic Load Balancer & Auto scaling group
+
+## Elastic Load Balancer
+managed Load balancer across multiple AZ. It supports health checks.
+
+- Application LB : HTTP/HTTPs layer 7
+- Network LB : ultra high perfromance , TCP layer 4
+- Classic LB : layer 4 and layer 7.
+
+## Auto Scaling Group
+
+create or removes instances depending on demands or instance health across AZ. it can be used with elastic load balancer.
+they are defined by minimun size, desired capacity, and a maximum size.
 
 + **AWS Cost Explorer**
 
