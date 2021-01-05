@@ -129,6 +129,9 @@ Browser based ssh connection.
 
 are a custimization of EC2 instances.
 
+### Storage Gateway
+
+Brige between on premise data and cloud.
 ### EBS Storage
 
 EBS storage is a network drive , One EBS volume can be attached to a single instance.
@@ -152,7 +155,7 @@ It is a Managed Load balancer across multiple AZ. It supports health checks.
 - Network LB : ultra high perfromance , TCP layer 4
 - Classic LB : layer 4 and layer 7.
 
-## [Auto Scaling Group](../TechnicalProfessional/AWS-core.md#scalable-architecture-)
+## [Auto Scaling Group] (ASG)(../TechnicalProfessional/AWS-core.md#scalable-architecture-)
 
 Create or removes instances depending on demands or instance health across AZ. it can be used with elastic load balancer.
 they are defined by minimun size, desired capacity, and a maximum size.
@@ -175,6 +178,8 @@ they are defined by minimun size, desired capacity, and a maximum size.
     - Object Access Control List : finer control
     - Bucket Access Control List
 - **Encryption**
+
+has to be activated.
 
 ### S3 Versioning
 
@@ -201,10 +206,113 @@ availability : how available is the service.
 - S3 IA : 99,9% infrequent and rapid access. **lower cost but retrieval fee** ( disaster recovery).
 - S3 Intelligent tiering : 99,9% availability, **most cost saving**.
 - S3 IA One Zone : 99,5% availability (secondary backup copy).
-- Glacier : frozen data **low cost (GB/Month), there are fees for **retrieval**.
+- Glacier : frozen data **low cost** (GB/Month), there are fees for **retrieval**.
 - Glacier Deep archive **cheapest**.
 
 there are **transition rules** that can be used to **transit objects** between storage classes using **lifecycle configurations**.
+
+### S3 Data transportation
+
+Physical data transportation. **cost effictive**
+use [snowball](../TechnicalProfessional/AWS-core.md#aWS-Snow-Family)
+
+## Database & Analytics
+
+### RDS
+
+- **Managed database** using SQL.
+- **Automated** provisioning , OS patching.
+- Continuous backup and restore options.
+- Monitoring dash board.
+- scale the read perfromance with read replicas.
+- Multi AZ for disaster recovery.
+- Storage is backed by EBS.
+- Vertical/Horizontal scalable.
+- OLTP : online transaction processing
+
+### Aurora
+
+Propriatory, cloud optimized, supports only Postgres (3x perfromance) and MySql(5x performance).
+- Aurora storage automatically scales in 10GB increments up to 64TB
+- Aurora **costs 20%** more than RDS.
+- Not included in free tier.
+- OLTP : online transaction processing
+
+### ElastiCache
+
+- **In memory database** with high perfromance low latency.
+- **reduce loads** off databases. 
+
+### DynamoDB
+
+- Fully Managed High availability DB with **replication across 3 AZ**.
+- **noSQL** key/Value database.
+- **Serverless** database.
+- **millions** of requests/sec.
+- low **latency retrieval**
+
+### RedShift
+
+- **Warehouse** and use **analytics** on it.
+- Column based and not row based.
+- Based on **PostgresSQL**.
+- OLAP ( Online Analytical processing)
+- Integrated with BI such as **AWS QuickSight** and **Tableau**
+
+### Elastic Map Reduce (EMR)
+
+- creates **Hadoop cluster** (BigData) to analyse and process Big data.
+- used for data processing machine learning web indexing, big data.
+- provisions EC2 instances and configure them.
+
+### Athena
+
+- Full **Serverless** database with SQL capabilities.
+- Queries data in **S3**
+- Pay per Query
+
+### Data Migration Service (DMS)
+
+- Used for database migration into AWS.
+- The source database remains **available during migration**.
+
+### AWS Glue
+
+It's a managed **E**xtract, **T**ransform and **L**oad service (ETL).
+Used to prepare and transform data to analytics.
+It's full **serverless**.
+Glue Data Catalog is a central repository to store the cataloge of datasets. It is used to **provide metadata** to athena, Redshift and EMR.
+
+## Other Compute services
+
+### Elastic container service (ECS)
+
+It launches docker containers on AWS. The customer need to provision and maintain EC2 instances.
+
+### FarGate :
+
+Serverless, Same as ECS but **no need to provision** the infrastructure.
+
+### Elastic Container Registry (ECR)
+
+Private Docker Container in AWS. Stores Docker Images that can be run by Fargate.
+
+### AWS Lamda
+
+**On demand** , **autoscalable**, **serverless** virtual functions **limited by time for shorter time of execution**.
+Pay per request. It is event driven. Integarted with **programming languages**.
+**Docker** can not be used with **lamda**.
+It **has a free tier** with 1 Millions calls. after the free tier, customer **pay by calls , duration and RAM**. 
+It is used for workloads from **0 to 15 Minutes**.
+
+### AWS Batch
+
+**Serverless with no time limit**, used for Efficiently running **100000s** of computing jobs on AWS.
+
+### LightSail
+
+**Low and predictable** pricing. FUlly managed. Can setup monitoring and notifications.
+Mostly for website, simple applications. For Users with **No cloud expierience**.
 
 ## Messaging and Queuing
 
