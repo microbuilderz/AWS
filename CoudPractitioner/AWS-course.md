@@ -60,7 +60,7 @@ Secret Acess Keys = password
 - use IAM **credential report** and IAM **access advisor** to audit user access.
 
 ## [Cloud Computing](../TechnicalProfessional/AWS-core.md#cloud-) 
-## Elastic Cloud Compute (EC2)
+## [Elastic Cloud Compute (EC2)] (../TechnicalProfessional/AWS-core.md#compute-services-ec2)
 
 It is an IaaS.
 
@@ -285,9 +285,13 @@ Glue Data Catalog is a central repository to store the cataloge of datasets. It 
 
 ## Other Compute services
 
+### [Amazon Orchestration Tools](../TechnicalProfessional/AWS-core.md#aws-compute-services)
+
 ### Elastic container service (ECS)
 
 It launches docker containers on AWS. The customer need to provision and maintain EC2 instances.
+
+### Amazon EKS : Elastic Kubernetes service
 
 ### FarGate :
 
@@ -368,7 +372,6 @@ Increase transfer speed of files in and out of S3.
 ### AWS Global Accelerator
 
 **Redirects** to the proper application region throught the AWS internal network.
-
 ## Cloud Integration
 
 **Decouple** applications with SQS or SNS
@@ -384,17 +387,77 @@ Subscribers can be : HTTP(S) end points, email, SMS Messages, Mobile Apps, **SQS
 
 ![sns](../images/sns.jpg)
 
+## Cloud Monitoring
 
-    
+### CloudWatch
 
-### [EC2 Compute](../TechnicalProfessional/AWS-core.md#compute-services-ec2)
-### [Amazon Orchestration Tools](../TechnicalProfessional/AWS-core.md#aws-compute-services)
+It Provides **metrics for every service** in AWS.example : Billing Metric, CPU Utilization in EC2, Ststus check, Network check, EFS Volumes, S3 Buckets, Service Limits ...
++ ### CloudWatch alarm
 
-+ **Amazon ECS** : Elastic Container service.
-    It is a highly scalable, high-performance container management service that supports Docker containers and allows you to easily run applications on a managed cluster of Amazon EC2 instances
-+ **Amazon EKS** : Elastic Kubernetes service
-+ **Amazon Elastic Container Registry** (ECR) can be used to store, manage, and deploy Docker container images. Amazon ECR eliminates the need to operate your container repositories. You can then pull your docker images from ECR and run those on Amazon Elastic Container Service (ECS).
-+ **Amazon FarGate**
+  Are used to trigger notifications for metrics and can setup alarm actions. example : Auto scaling / EC2 actions / SNS Notifications
++ ### CloudWatch logs
+
+  collects logs from services and provides realtime monitoring of logs.
+
++ ### CloudWatch Events = Event Bridge
+
+  It can be used to **schedule jobs (CRON)**, or **react to events** example IAM login.
+### CloudTrail
+
+Is a **governance/compliant** and **aws account audit** service.
+get a history of events API call of :
+- console,
+- CLI,
+- SDK,
+- AWS services
+
+### AWS X-RAY
+
+Debugging in production of **distributed services**. It's a **visual analysis** of the applications. It is also used for **troubleshooting**.
+
+### Service Health DashBoard
+
+Shows **Historical information for services in all region** (services Health). It **monitors** AWS Infrastrutcture.
+### Personal Health DashBoard
+
+Provides **alert and remediation** guidance for AWS infrastructure. It provides **personalized views of perfromance and availability**.
+
+## VPC & Networking
+
+VPC is Private network to deploy ressources. It is tied to a **specific region**. within a VPC are subnets which allows the **partitioning of network** inside it.
+There are **public** (accessible to internet) subnet and **private** one in AZ.
+**Intenet Gateway** are used to allow traffic to **public subnets**.
+**NAT Gateway** are used to allow traffic to **private** subnets that will allow them to **connect to internet while remaining private**.
+
+### Security Group & Network access Conrol List 
+
+NACL is at the **subnet level** before it reaches the instance. (statless)
+Security group is a firewall that controls traffic to and from EC2 Instances. it operates at the **instance level** (statefull)
+
+### VPC Flow log
+
+It captures information about network traffic. It is used to **monitor and troubleshoot** connectivity issues.
+
+### VPC Peering
+
+Connect two vpc using aws network.Both will look as if they are **in the same network**.
+
+### VPC Endpoints
+
+Allows to connect using private network for better security. better latency.
+- VPC Endpoint **Gateway** : for S3 and DynamoDB
+- VPC EndPoint **Interface** : for the rest of services.
+
+### Direct Connect & Site to Site VPN
+
+Used for hybrid connection:
+
+Site to Site VPN : **Encrypted connection** and goes over the public internet. ( **Customer and Virtual Private Gateway** are needed to connect)
+DirectConnect : **Physical private connection** between on-premises and AWS. ( take at least a month to be established).
+
+### Transit Gateway
+
+To allow peering between thousand of VPCs also with on-premise infrastructure.
 
 ## check [Technical Professional](../TechnicalProfessional/AWS-core.md) for further documentation
 
