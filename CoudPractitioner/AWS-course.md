@@ -39,7 +39,7 @@ They grant permissions to trusted entities.
 ### IAM Security tools :
 
 - IAM **credential report** (Account level) : it lists all users and credential reports
-- IAM **access advisor** (User level) : it shows the service permissions granted to a user and last access time.  
+- IAM **access advisor** (User level) : it shows the service permissions granted to a specific user and last access time.  
 ### Acessing AWS account
 
 - AWS management console using password and MFA. (AWS Internet site)
@@ -127,24 +127,24 @@ Browser based ssh connection.
 
 ### Amazon Machine Images (AMI) 
 
-are a custimization of EC2 instances.
+Are a custimization of EC2 instances.
 
 ### Storage Gateway
 
 Brige between on premise data and cloud.
 ### EBS Storage
 
-EBS storage is a network drive , One EBS volume can be attached to a single instance.
-Are locked to one AZ. EBS volume are persistant. only same AZ instances cann attach to EBS.
-to transfer EBS volume data across regions, we can use snapshot to restore it in another region or AZ.
+EBS storage is a **network drive** , One EBS volume can be attached **to a single instance**.
+Are **locked to one AZ**. EBS volume are **persistant**. only same AZ instances cann attach to EBS.
+to transfer EBS volume data across regions, we can use **snapshot** to restore it in another region or AZ.
 EBS snapshots are stored in amazone S3.
 ### Instance Storage
 
-Hardware disk storage. Better IO performance. They loose their storage when detached. They are good for buffer/ cache / temporary content.
+**Hardware** disk storage. Better IO performance. They **loose their** storage when detached. They are good for buffer/ cache / temporary content.
 
 ### EFS storage
 
-can be mounted to 100s of EC2. shared EFS. works across multiple AZ. expensive. it is scalable.
+Can be mounted to 100s of EC2. shared EFS. works across **multiple AZ**. expensive. it is scalable.
 
 ## Elastic Load Balancer & Auto scaling group
 
@@ -193,8 +193,8 @@ Logs **request** to buckets in **another S3 Bucket**.
 
 copying is asynchronus.
 
-- CRR : cross region replication : compliance/low latency access/replication acrosse accounts
-- CSR : same region replication : logs / live repliction between production and test accounts.
+- CRR : cross region replication : compliance/low latency access/replication acrosse accounts. Used to **globally** optimize **dynamic data**.
+- SRR : same region replication : logs / live repliction between production and test accounts.
 
 ### S3 Classes
 
@@ -314,18 +314,77 @@ It is used for workloads from **0 to 15 Minutes**.
 **Low and predictable** pricing. FUlly managed. Can setup monitoring and notifications.
 Mostly for website, simple applications. For Users with **No cloud expierience**.
 
-## Messaging and Queuing
+## Deployment & Management Infrastructure
 
-+   **Amazon Simple Notification Service** (Amazon SNS)
-     
-     It is a **publish/subscribe service**. Using Amazon SNS topics, a publisher publishes messages to subscribers.
-     eMails/Push Notifications/text messages/ https requests.
-    
-     ![sns](../images/sns.jpg)
+### CloudFormation
 
-+   **Amazon Simple Queue Service** (Amazon SQS)
+Cloudformation **template** is used to build **Infrastructure as Code**. Can be used to replicate infrastructure.
+Can be **timely managed** to destroy the services at certain time.It's usage **is free**.
 
-     Using Amazon SQS, Customers can send, store, and receive messages between software components, without losing messages or requiring other services to be available. In Amazon SQS, an application sends messages into a queue. A Customer or service retrieves a message from the queue, processes it, and then deletes it from the queue.
+### BeanStalk
+
+It is a Managed **Plattform as a service**. It is a **developer centric view**.
+It's usage **is free**.
+### CodeDeploy
+
+It doesn't need to use CloudFormation or BeanStalk. It is a **hybrid service**. Servers and Instances **must be provisioned**.
+
+### System Manager Service (SSM)
+
+Manage the fleet of EC2 instances and on-premises. It can be used to **patch automate the instances**, **run commands across services**, **Store parmater configuration**.
+An **SSM** agent has to be installed on instances.
+### OpsWorks
+
+Managed **Chef and puppet** service.
+## Global Infrastructure
+
+Deployment in **different regions or edge locations**. It improves **latency**, adds a **disaster recovery plan**.
+### Route 53
+
+**Route users** to the closest deplyment with the lowest latency. Good for disaster recovery strategy.
+It's **not a free service**. 
+It's a **managed DNS** service.
+> - map name to address -> A record
+> - map name to long adress -> AAAA record.
+> - map name to a name -> CName
+> - map name to AWS ressource -> Alias.
+
+It has following routing policies :
+
+- **Simple** Routing policy (1 to 1) with **no health** checks
+- **Weighted** Routing Policiy with **health check**
+- **Latency** Routing Policiy with **health check**
+- **Failover** Routing Policy with **health check**
+
+### CloudFront
+
+It's a Content delivery network **(CDN)**. It **replicates content**  in to edge locations. It improves the read perfomance by caching to edge locations. 
+It has **Ddos protection**. It caches in **S3 Bucket** or **Https server**. Not best suited for **dynamic content**.
+
+### S3 Transfer Acceleration
+
+Increase transfer speed of files in and out of S3.
+
+### AWS Global Accelerator
+
+**Redirects** to the proper application region throught the AWS internal network.
+
+## Cloud Integration
+
+**Decouple** applications with SQS or SNS
+### Simple Queue Service SQS
+
+Serverless ( Managed ) low letency **message queuing**. It uses a **pull based system**.
+It's a **free service**. Message are **retained by default 4 Days** and to a **maximum of 14 Days**.
+### Simple Notification Service SNS
+
+It's a **publisher/subscriber** service.
+SNS **publisher** will send notifications. All **subscriber** will recieve the notifications.
+Subscribers can be : HTTP(S) end points, email, SMS Messages, Mobile Apps, **SQS queues** , **Lambda Functions**.
+
+![sns](../images/sns.jpg)
+
+
     
 
 ### [EC2 Compute](../TechnicalProfessional/AWS-core.md#compute-services-ec2)
