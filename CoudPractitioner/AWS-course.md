@@ -459,6 +459,46 @@ DirectConnect : **Physical private connection** between on-premises and AWS. ( t
 
 To allow peering between thousand of VPCs also with on-premise infrastructure.
 
+## Security & Compliance
+### DDos Protection
+
+    + AWS Shield Standard : free. Protection against commun DDos attacks.
+    + AWS Shield Advanced : Premium DDos Protection. Protection against more sophisticated DDos attacks.
+    + AWS WAF : Filter request based on rules. Protects Web Applications from common exploits using (Web access control list)
+    + CloudFront & Route 53
+### Penetration Testing
+
+Attack own infrastructure for testing. No **need to inform AWS** about the test.
+
+### Encryption
+
+- Key Management Service KMS, by default CloudTrail, S3 Glacier and Storage Gateway. 
+- CloudHSM : Customers manage their own keys using hardware Security.
+
+### Secrets Manager
+
+**Stores Secrets**. It allows Forcing the **rotation** of secrets. it can **manage RDS credentials**.
+### Artifcat
+
+On demand access to **compliance and documentation**. Good for **internal audit** and **compliance documents**.
+
+### GuardDuty
+
+It is a **threat detection service** that **continously monitors** **malicious activities** and **unauthorized behaviors**.
+It uses **Machine learning algorithm** to protect **AWS account**.
+**Can emit events to cloudwatch**. cloud watch can then trigger functions.
+
+### Inspector
+
+**Automated Security** and **vurnabilities assesment** on **EC2 Instances only**.
+
+### Config
+
+**Auditing and recording** config changes and AWS ressources. Can recieve SNS events. It is a paid service.
+
+### Macie
+
+Fully managed data security and privacy service. Used to find sensitive data.
 ## check [Technical Professional](../TechnicalProfessional/AWS-core.md) for further documentation
 
 ## AWS Cloud practitioner domain
