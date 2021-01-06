@@ -499,6 +499,94 @@ It uses **Machine learning algorithm** to protect **AWS account**.
 ### Macie
 
 Fully managed data security and privacy service. Used to find sensitive data.
+
+## Machine Learning
+
+### [Rekognition](https://aws.amazon.com/rekognition/)
+
+Finds **people/text/scenes** in images and videos
+### Transcribe
+
+Convert Speech to text quickly and accurately.
+### Polly
+
+Convert Text to Speech
+
+### Translate
+
+It translates languages.
+
+### Lex
+
+Same tech as in alexa. It uses Natural language understandings to recognize the meaning. Can be used to build chat bots.
+
+### Comprehend
+
+It is for Natural language Processing.
+
+### SageMaker
+
+Fully Managed service for **developer to build machine learning models**.
+
+
+## Accound Management & Billing
+
+### AWS Organization 
+
+It's a global service. 
+The consolidated billing feature of AWS Organizations enables to receive a **single bill** for **all AWS accounts in an organization**.
+Pooling from reserved instances will be shared.
+It provides an **api to automate account creation**.
+It can also **restrict account privileges** using **service control policies**.
+
+### AWS total Cost of ownership (TCO)
+
+It evaluates the cost saving by moving on-premises to AWS.
+
+### AWS Pricing Calculator ( Simple Monthly Calculator **deprecated** )
+
+Caluclates the cost of the architecture solution.
+
+### AWS Billing DashBoard
+
+Shows the costs for the Month.
+
+### Cost allocation tags ###
+
+Allows to track costs by category. ( ressource groups)
+
+### Cost and Usage Reports
+
+Generates reports in details for cost and usage.
+
+### Cost explorer
+
+**Visual tool** to **analyse costs** using **custom reports**, and can **forcast** Bills.
+
+### Billing Alarm
+
+global billing alarm
+
+### Budget
+
+Creates Budgets and send alarms when a threshold has been exceeded.
+
+### AWS **[Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor)**
+
+AWS Trusted Advisor is a web service that inspects your AWS environment and provides real-time recommendations in accordance with AWS best practices.
+
+> ![advisor](../images/trustAdvisers.jpg)
+
+Trusted Advisor compares its findings to AWS best practices in five categories: **cost optimization**, **performance**, **security**, **fault tolerance**, and **service limits**. For the checks in each category, Trusted Advisor offers a list of recommended actions and additional resources to learn more about AWS best practices. 
+**Alarms Can be set to CloudWatch Events**
+
+### AWS Support Plans
+
+- Free: 24hx7 access to customer service
+- Developer: emails Cloud Support Associates. 24 hours reponse General/ 12h system impairs
+- Business: 24x7 email, phone and chat access , production system impaires <4h, Production system down <1h
+- Enterprise: dedicated TAM + concierge supoort team for billing, business critical down < 15 min
+
 ## check [Technical Professional](../TechnicalProfessional/AWS-core.md) for further documentation
 
 ## AWS Cloud practitioner domain
