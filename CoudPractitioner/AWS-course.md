@@ -482,7 +482,7 @@ Attack own infrastructure for testing. No **need to inform AWS** about the test.
 
 On demand access to **compliance and documentation**. Good for **internal audit** and **compliance documents**.
 
-### GuardDuty
+### Guard Duty
 
 It is a **threat detection service** that **continously monitors** **malicious activities** and **unauthorized behaviors**.
 It uses **Machine learning algorithm** to protect **AWS account**.
@@ -582,10 +582,80 @@ Trusted Advisor compares its findings to AWS best practices in five categories: 
 
 ### AWS Support Plans
 
-- Free: 24hx7 access to customer service
+- Free: **24hx7** access to customer service
 - Developer: emails Cloud Support Associates. 24 hours reponse General/ 12h system impairs
-- Business: 24x7 email, phone and chat access , production system impaires <4h, Production system down <1h
-- Enterprise: dedicated TAM + concierge supoort team for billing, business critical down < 15 min
+- Business: **24x7 email, phone and chat access** , production system **impaires <4h**, Production **system down <1h**
+- Enterprise: **dedicated TAM + concierge** support team for billing, business **critical down < 15 min**
+
+## Advanced Identity
+### Cognito
+
+Identity for **web and mobile application** Users. **Create users** for **Web and mobile** apps using Cognito. ( can also **login with facebook and google** )
+### Directory services
+
+Login to **Microsoft active directory** services. It establishes a **connection** with on premises AD.
+### Signle Sign On (SSO)
+
+Use **one login** to connect to **multiple accounts**. can be integrated with on premesis AD.
+
+## Well Architected Framework
+
+### Operation Excellence
+
+- Operation as Code . Infrasturcture as Code. 
+- Make frequent small changes. 
+- Annotate documentation.
+- Adjust procedures Frequently.
+- Anticipate failures.
+
+### Security
+
+**Protects** Information and assets while using risk management.
+
+- Centralized accounts.
+- Least priviliges
+- Enable traceability
+- Apply security in all layers
+- Automate security
+- Protect data in and out
+- Prepare seucrity events
+
+### Reliability
+
+The ability to **recover** from infrastructure of service **disruption**.
+
+- Test recovery procedures
+- Auto recover from failure
+- Autoscale
+- Stop guessing capacity
+- Manage automation
+
+### Performance Efficiency
+
+Using computing ressources **efficiently** to meet requirements and evolve.
+
+- Use advanced technologies
+- Go global in minutes
+- Use serverless architecture
+- Experiment more often
+- Mechanical sympathy : be aware of all AWS services
+### Cost Optimization
+
+Run system at the lowest price.
+
+- Pay for what you use
+- Stop spending money on datacenter operations
+- Analyse and attribute expenditures (Tags)
+- Use managed applications (cheaper)
+
+## AWS EcoSystem
+
+APN : AWS Partner Network
+APN Technology Partner : provding hardware / Connectivity / and software help
+APN Consulting Partner : helps building systems
+APN Training Partner : helping on learning AWS
+AWS Competency Program : granted to APN Partners with strong technical proficiencies
+AWS Navigate Program : helps partners becomre better partners 
 
 ## check [Technical Professional](../TechnicalProfessional/AWS-core.md) for further documentation
 
