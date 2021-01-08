@@ -78,6 +78,9 @@ They can be attached to multiple instances.
 
 Script launched at the first start of instance
 
+### instance metadata
+
+Are the defined parameters and attributes specified in instance configuration.
 ### EC2 instance connect
 
 Browser based ssh connection.
@@ -332,6 +335,11 @@ It's usage **is free**.
 ### CodeDeploy
 
 It doesn't need to use CloudFormation or BeanStalk. It is a **hybrid service**. Servers and Instances **must be provisioned**.
+It is used for **deploying and not building** software.
+
+### Cloud9
+
+Browser based IDE to run,build, test and debug code.
 
 ### System Manager Service (SSM)
 
@@ -348,6 +356,7 @@ Deployment in **different regions or edge locations**. It improves **latency**, 
 **Route users** to the closest deplyment with the lowest latency. Good for disaster recovery strategy.
 It's **not a free service**. 
 It's a **managed DNS** service.
+It can serve content based on the origin of the request, making it possible to **serve different version of the same website based on the request location**.
 > - map name to address -> A record
 > - map name to long adress -> AAAA record.
 > - map name to a name -> CName
@@ -417,7 +426,7 @@ Debugging in production of **distributed services**. It's a **visual analysis** 
 
 ### Service Health DashBoard
 
-Shows **Historical information for services in all region** (services Health). It **monitors** AWS Infrastrutcture.
+Shows **Historical information for services in all region** (services Health). It **monitors** AWS Infrastrutcture. It provides **most up to the minute** informations on **AWS service Availability**.
 ### Personal Health DashBoard
 
 Provides **alert and remediation** guidance for AWS infrastructure. It provides **personalized views of perfromance and availability**.
@@ -472,8 +481,8 @@ Attack own infrastructure for testing. No **need to inform AWS** about the test.
 
 ### Encryption
 
-- Key Management Service KMS, by default CloudTrail, S3 Glacier and Storage Gateway. 
-- CloudHSM : Customers manage their own keys using hardware Security.
+- Key Management Service KMS : is a fully managed AWS service. **Customers can not manage their own keys**. by default CloudTrail, S3 Glacier and Storage Gateway. 
+- CloudHSM : Customers **manage their own keys** using **hardware Security**.
 
 ### Secrets Manager
 
@@ -498,7 +507,7 @@ It uses **Machine learning algorithm** to protect **AWS account**.
 
 ### Macie
 
-Fully managed data security and privacy service. Used to find sensitive data.
+**Fully managed data security and privacy service**. Used to find **sensitive data**.It **lowers** the cost of **data protection**.
 
 ## Machine Learning
 
@@ -569,7 +578,8 @@ global billing alarm
 
 ### Budget
 
-Creates Budgets and send alarms when a threshold has been exceeded.
+**Creates Budgets** and **send alarms** when a threshold has been exceeded.
+It allows companies to **track and categorize spending on a detailed level**.
 
 ### AWS **[Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor)**
 
@@ -619,6 +629,8 @@ Use **one login** to connect to **multiple accounts**. can be integrated with on
 - Automate security
 - Protect data in and out
 - Prepare seucrity events
+
+- Amazon **[GuardDuty](https://aws.amazon.com/guardduty/)** is a threat detection service that monitors malicious activity and unauthorized behavior to protect your AWS account.
 
 ### Reliability
 
@@ -683,6 +695,8 @@ The AWS Certified Cloud Practitioner exam consists of **65 questions** to be com
 ## Exam Practice 
 
 - [20 AWS Practitioner questions](https://digitalcloud.training/aws-cloud-practitioner-free-practice-questions/)
+- [whizlabs Practitioner Tests](https://www.whizlabs.com/learn/course/aws-certified-cloud-practitioner-practice-tests)
+- [exam topics](https://www.examtopics.com/exams/amazon/aws-certified-cloud-practitioner/view/)
 - [Free Practitioner exams](https://www.awsboy.com/aws-practice-exams/practitioner/)
 - [Udemy Practice exams](https://www.udemy.com/course/practice-exams-aws-certified-cloud-practitioner)
 
