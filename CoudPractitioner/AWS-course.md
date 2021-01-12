@@ -12,6 +12,23 @@ This policy is present at [aup](https://aws.amazon.com/aup/) and is updated on a
 - IaaS : Virtualisation, Servers, Storage and Networking is managed by the cloud company (example EC2)
 - PaaS : IaaS + OS + MiddleWare + Runtime is managed by the cloud company (example Elastik bean stalk)
 - SaaS : eveything is managed by the cloud company (example Rekognition)
+
+![cloudModels](../images/cloudModels.jpg)
+
+## [Shared Responsability Model](https://aws.amazon.com/compliance/shared-responsibility-model/)
+
+> ![sharedModel](../images/sharedSecurity.jpg)
+
+### AWS Reponsability : 
+Physical & environmental Control. 
+### Shared Controls : 
+- Patch Management ( AWS :  for patching Infrastructure hadrware ,Customer : patching Guest OS and apps).
+- Configuration Management ( AWS : config of Infra., Customer : config of users/app/database/...).
+- Training (AWS : AWS employees, Customer : Customer employees).
+
+### Customer Specific :
+
+Example Service and communication Protection (Zone Security) ...
 ## Pricing fundamentals
 
 - For compute -> pay for compute time
@@ -118,6 +135,8 @@ Browser based ssh connection.
 + **Dedicated Instances**
 
     like dedicated Hosts, but no access to the hardware. hardware will no be shared.
+     > ![dedicatedHostsVsInstances](../images/dedicatedHostsVsInstances.jpg)
+    
 
 + **AWS Cost Explorer**
 
@@ -131,7 +150,7 @@ Are a custimization of EC2 instances.
 
 ### Storage Gateway
 
-Brige between on premise data and cloud.
+Brige between **on-premises data and cloud** that helps **accessing data**. It is **encrypted by default**. It Supports **Tape Gateway, File Gateway, and Volume Gateway**.
 ### EBS Storage
 
 EBS storage is a **network drive** , One EBS volume can be attached **to a single instance**.
@@ -156,7 +175,6 @@ It is a Managed Load balancer across multiple AZ. It supports health checks.
 - Classic LB : layer 4 and layer 7.
 
 ## [Auto Scaling Group] (ASG)
-
 Create or removes instances depending on demands or instance health across AZ. it can be used with elastic load balancer.
 they are defined by minimun size, desired capacity, and a maximum size.
 
@@ -232,9 +250,11 @@ use [snowball](../TechnicalProfessional/AWS-core.md#aWS-Snow-Family)
 - Vertical/Horizontal scalable.
 - OLTP : online transaction processing
 
+> ![rdsFeatures](../images/rdsFeatures.jpg)
+
 ### Aurora
 
-Propriatory, cloud optimized, supports only Postgres (3x perfromance) and MySql(5x performance).
+Propriatory, cloud optimized, supports only **Postgres** (3x perfromance) and **MySql**(5x performance).
 - Aurora storage automatically scales in 10GB increments up to 64TB
 - Aurora **costs 20%** more than RDS.
 - Not included in free tier.
@@ -400,7 +420,8 @@ Subscribers can be : HTTP(S) end points, email, SMS Messages, Mobile Apps, **SQS
 
 ### CloudWatch
 
-It Provides **metrics for every service** in AWS.example : Billing Metric, CPU Utilization in EC2, Ststus check, Network check, EFS Volumes, S3 Buckets, Service Limits ...
+It is a **monitoring and observability** service built for **DevOps engineers**, **developers**, **site reliability engineers** (SREs), and **IT managers**.
+It Provides **metrics for every service** in AWS.example : Billing Metric, CPU Utilization in EC2, Status check, Network check, EFS Volumes, S3 Buckets, Service Limits ...
 + ### CloudWatch alarm
 
   Are used to trigger notifications for metrics and can setup alarm actions. example : Auto scaling / EC2 actions / SNS Notifications
@@ -436,12 +457,14 @@ Provides **alert and remediation** guidance for AWS infrastructure. It provides 
 VPC is Private network to deploy ressources. It is tied to a **specific region**. within a VPC are subnets which allows the **partitioning of network** inside it.
 There are **public** (accessible to internet) subnet and **private** one in AZ.
 **Intenet Gateway** are used to allow traffic to **public subnets**.
-**NAT Gateway** are used to allow traffic to **private** subnets that will allow them to **connect to internet while remaining private**.
+**NAT Gateway** & **NAT instance** are used to allow traffic to **private** subnets that will allow them to **connect to internet while remaining private**.
+**NAT Gateway** are **managed by AWS**, whereas **NAT Instances** are **managed by the customer**.
 
 ### Security Group & Network access Conrol List 
 
-NACL is at the **subnet level** before it reaches the instance. (statless)
-Security group is a firewall that controls traffic to and from EC2 Instances. it operates at the **instance level** (statefull)
+- NACL is at the **subnet level** before it reaches the instance(statless).
+It has **allow & deny rules**. 
+- Security group is a firewall that controls traffic to and from EC2 Instances. it operates at the **instance level** (statefull). It has only **allow rules**.
 
 ### VPC Flow log
 
@@ -461,8 +484,8 @@ Allows to connect using private network for better security. better latency.
 
 Used for hybrid connection:
 
-Site to Site VPN : **Encrypted connection** and goes over the public internet. ( **Customer and Virtual Private Gateway** are needed to connect)
-DirectConnect : **Physical private connection** between on-premises and AWS. ( take at least a month to be established).
+- Site to Site VPN : **Encrypted connection** and goes **over the public internet**. ( **Customer and Virtual Private Gateway** are needed to connect)
+- DirectConnect : **Physical private connection** between on-premises and AWS. ( take at least a month to be established).
 
 ### Transit Gateway
 
@@ -471,10 +494,13 @@ To allow peering between thousand of VPCs also with on-premise infrastructure.
 ## Security & Compliance
 ### DDos Protection
 
-    + AWS Shield Standard : free. Protection against commun DDos attacks.
-    + AWS Shield Advanced : Premium DDos Protection. Protection against more sophisticated DDos attacks.
-    + AWS WAF : Filter request based on rules. Protects Web Applications from common exploits using (Web access control list)
-    + CloudFront & Route 53
++ [AWS Shield](https://aws.amazon.com/shield/getting-started/) Standard : free. Protection against commun DDos attacks.
++ [AWS Shield](https://aws.amazon.com/shield/getting-started/) Advanced : Premium DDos Protection. Protection against more sophisticated DDos attacks. For additional protection against larger and more sophisticated attacks, **visibility into attacks**, and **24x7 access to DDoS experts for complex cases**. 
+  ![sns](../images/awsShield.jpg)
+
++ AWS WAF : Filter request based on rules. Protects Web Applications from common exploits using (Web access control list)
+      It is **charged based on the number of web access control lists**
++ CloudFront & Route 53
 ### Penetration Testing
 
 Attack own infrastructure for testing. No **need to inform AWS** about the test.
@@ -500,6 +526,7 @@ It uses **Machine learning algorithm** to protect **AWS account**.
 ### Inspector
 
 **Automated Security** and **vurnabilities assesment** on **EC2 Instances only**.
+Amazon Inspector automatically assesses applications for **exposure**, **vulnerabilities**, and **deviations from best practices**.
 
 ### Config
 
@@ -547,6 +574,7 @@ The consolidated billing feature of AWS Organizations enables to receive a **sin
 Pooling from reserved instances will be shared.
 It provides an **api to automate account creation**.
 It can also **restrict account privileges** using **service control policies**.
+**[Reservation](https://d0.awsstatic.com/whitepapers/aws_pricing_overview.pdf)** can be done for **EC2**,**DynamoDB**,**ElastiCache**,**Redshift** & **RDS**.
 
 ### AWS total Cost of ownership (TCO)
 
@@ -579,7 +607,11 @@ global billing alarm
 ### Budget
 
 **Creates Budgets** and **send alarms** when a threshold has been exceeded.
-It allows companies to **track and categorize spending on a detailed level**.
+It allows companies to **track and categorize spending on a detailed level**.You can also use AWS Budgets to **set reservation utilization or coverage targets** and receive alerts when your utilization **drops below the threshold you define**.
+
+> **It is useful to note the difference between CloudWatch Billing vs Budgets**:
+> - **CloudWatch Billing Alarms**: Sends an alarm when the **actual cost** exceeds a **certain threshold**.
+> - Budgets: Sends an alarm when the **actual cost** exceeds the **budgeted amount** or even when the **cost forecast exceeds** the **budgeted amount**.
 
 ### AWS **[Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor)**
 
@@ -590,13 +622,15 @@ AWS Trusted Advisor is a web service that inspects your AWS environment and prov
 Trusted Advisor compares its findings to AWS best practices in five categories: **cost optimization**, **performance**, **security**, **fault tolerance**, and **service limits**. For the checks in each category, Trusted Advisor offers a list of recommended actions and additional resources to learn more about AWS best practices. 
 **Alarms Can be set to CloudWatch Events**
 
-### AWS Support Plans
+### AWS [Support Plans](https://aws.amazon.com/premiumsupport/plans/)
 
 - Free: **24hx7** access to customer service
 - Developer: emails Cloud Support Associates. 24 hours reponse General/ 12h system impairs
 - Business: **24x7 email, phone and chat access** , production system **impaires <4h**, Production **system down <1h**
 - Enterprise: **dedicated TAM + concierge** support team for billing, business **critical down < 15 min**
 
+![supportPlans](../images/support1.jpg)
+![supportPlans](../images/support2.jpg)
 ## Advanced Identity
 ### Cognito
 
@@ -608,15 +642,14 @@ Login to **Microsoft active directory** services. It establishes a **connection*
 
 Use **one login** to connect to **multiple accounts**. can be integrated with on premesis AD.
 
-## Well Architected Framework
-
+## [Well-Architected Framework](https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/) 
 ### Operation Excellence
 
-- Operation as Code . Infrasturcture as Code. 
-- Make frequent small changes. 
-- Annotate documentation.
-- Adjust procedures Frequently.
-- Anticipate failures.
+- **Operation as Code** . Infrasturcture as Code. 
+- Make **frequent small changes**. 
+- Annotate **documentation**.
+- Adjust **procedures Frequently**.
+- **Anticipate failures**.
 
 ### Security
 
@@ -624,17 +657,18 @@ Use **one login** to connect to **multiple accounts**. can be integrated with on
 
 - Centralized accounts.
 - Least priviliges
-- Enable traceability
-- Apply security in all layers
-- Automate security
-- Protect data in and out
-- Prepare seucrity events
+- **Enable traceability**.
+- Apply **security in all layers**.
+- **Automate security**.
+- **Protect data** in and out.
+- Prepare **seucrity events**.
 
 - Amazon **[GuardDuty](https://aws.amazon.com/guardduty/)** is a threat detection service that monitors malicious activity and unauthorized behavior to protect your AWS account.
 
 ### Reliability
 
 The ability to **recover** from infrastructure of service **disruption**.
+Best Practice : **Foundations**, **Change Management**, **Failure Management**.
 
 - Test recovery procedures
 - Auto recover from failure
@@ -646,11 +680,11 @@ The ability to **recover** from infrastructure of service **disruption**.
 
 Using computing ressources **efficiently** to meet requirements and evolve.
 
-- Use advanced technologies
-- Go global in minutes
-- Use serverless architecture
-- Experiment more often
-- Mechanical sympathy : be aware of all AWS services
+- Use **advanced technologies**
+- Go **global in minutes**
+- Use **serverless** architecture
+- **Experiment** more often
+- **Mechanical empathy** : be aware of all AWS services
 ### Cost Optimization
 
 Run system at the lowest price.
@@ -668,6 +702,7 @@ APN Consulting Partner : helps building systems
 APN Training Partner : helping on learning AWS
 AWS Competency Program : granted to APN Partners with strong technical proficiencies
 AWS Navigate Program : helps partners becomre better partners 
+> ![apnPartners](../images/apnPartners.jpg)
 
 ## check [Technical Professional](../TechnicalProfessional/AWS-core.md) for further documentation
 
@@ -702,7 +737,6 @@ The AWS Certified Cloud Practitioner exam consists of **65 questions** to be com
 
 ## Remarks and more stuff
 
-- AWS **Shield**  is a managed Distributed Denial of Service (DDoS) protection service that safeguards applications running on AWS. AWS Shield provides always-on detection and automatic inline mitigations that minimize application downtime and latency, so there is no need to engage AWS Support to benefit from DDoS protection.
 - AWS **[WAF](https://aws.amazon.com/waf/)** - By using AWS WAF, you can configure web access control lists (Web ACLs) on your **CloudFront distributions** or **Application Load Balancers** to filter and block requests based on request signatures. Besides, by using AWS WAF's rate-based rules, you can automatically block the IP addresses of bad actors when requests matching a rule exceed a threshold that you define.
 ![waf](../images/waf.jpg)
 - **Amazon CloudFront with Route 53** - AWS hosts CloudFront and Route 53 services on a distributed network of proxy servers in data centers throughout the world called edge locations. Using the global Amazon network of edge locations for application delivery and DNS service plays an important part in building a comprehensive defense **against DDoS attacks** for your dynamic web applications.
@@ -723,6 +757,7 @@ The AWS Certified Cloud Practitioner exam consists of **65 questions** to be com
 - AWS **ElastiCache** provides in-memory cache and database services.
 - AWS **RedShift** is a fast, scalable data warehouse
 - AWS **Systems Manager** gives you visibility and control of the infrastructure on AWS. Systems Manager provides a unified user interface so customers can view operational data from multiple AWS services and it allows to automate operational tasks across AWS resources. With Systems Manager, you can group resources, like Amazon EC2 instances, Amazon S3 buckets, or Amazon RDS instances, by application, view operational data for monitoring and troubleshooting, and take action on your groups of resources.
+  ![systemManager](../images/systemManager.jpg)
 - AWS **Glacier** encrypts data automatically
 - AWS **Inspector** automatically assesses applications for exposure, vulnerabilities, and deviations from best practices.
 - AWS **QuickSight** is a scalable, serverless, embeddable, machine learning-powered business intelligence (BI) service built for the cloud. QuickSight lets you easily create and publish interactive BI dashboards that include Machine Learning-powered insights
@@ -747,13 +782,7 @@ The AWS Certified Cloud Practitioner exam consists of **65 questions** to be com
 - **Access keys** are long-term credentials for an IAM user or the AWS account root user. You can use access keys to sign programmatic requests to the AWS CLI or AWS API (directly or using the AWS SDK). Access keys consist of **two parts**: an **access key ID** (for example, AKIAIOSFODNN7EXAMPLE) and a **secret access key** (for example, wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY). As a user name and password, you must use both the access key ID and secret access key together to authenticate your requests. Access Keys are secret, just like a password. You should never share them. **Access keys are not tied to the IAM role, IAM group, or AWS policy**.
 - AWS **Personal Health Dashboard** provides alerts and remediation guidance when AWS is experiencing events that may impact you. With Personal Health Dashboard, alerts are triggered by changes in the health of your AWS resources, giving you event visibility, and guidance to help quickly diagnose and resolve issues.
 - AWS **Service Health Dashboard** publishes most up-to-the-minute information on the status and availability of all AWS services in tabular form for all Regions that AWS is present in. You can check on this [page](https://status.aws.amazon.com/) any time to get current status information or subscribe to an RSS feed to be notified of interruptions to each service.
-- The **[Well-Architected Framework](https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/)** pillars :
-   - **Reliability** - This design principle includes the ability of a system to recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand (keep the systems available, plan for failure). The Reliability pillar cannot help with traceability of action by any user on the system.
-   - **Operational Excellence** - This design principle includes the ability to run and monitor systems to deliver business value (monitor systems and proactively take actions). Operational Excellence pillar cannot help with traceability of action by any user on the system.
-   - **Performance Efficiency** - This design principle includes the ability to use computing resources efficiently and maintain efficiency as demand changes. Performance Efficiency pillar cannot help with traceability of action by any user on the system.
-   - **Cost Optimization**
-   - **Security**
-- AWS **Service Catalog** allows organizations to create and manage catalogs of IT services that are approved for use on AWS. These IT services can include everything from virtual machine images, servers, software, and databases to complete multi-tier application architectures. Service Catalog cannot be used to review the compliance and governance-related documents on AWS.
+- AWS **Service Catalog** allows organizations to create and manage catalogs of IT services that are approved for use on AWS. These IT services can include everything from virtual machine images, servers, software, and databases to complete multi-tier application architectures. 
 - AWS **Secrets Manager** helps you protect secrets needed to access your applications, services, and IT resources. The service enables you to easily rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle. Users and applications retrieve secrets with a call to Secrets Manager APIs, eliminating the need to hardcode sensitive information in plain text. Secrets Manager cannot be used to review the compliance and governance-related documents on AWS.
 - **Amazon API Gateway** is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale.
 - **Amazon EMR** is the industry-leading cloud big data platform for processing vast amounts of data using open source tools such as Hadoop, Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto. Amazon EMR can be used to provision resources to run big data workloads on Hadoop clusters.
@@ -791,10 +820,3 @@ Global Accelerator improves performance for a wide range of applications over TC
 - **VPC peering connection** is a networking connection between two VPCs that enables you to route traffic between them privately. VPC peering is not transitive, a separate VPC peering connection has to be made between two VPCs that need to talk to each other. With growing VPCs, this gets difficult to manage.
 ![vpcPeering](../images/vpcPeering.jpg)
 - AWS  **Site to Site VPN** creates a secure connection between your data center or branch office and your AWS cloud resources. This connection goes over the public internet. Site to Site VPN cannot be used to interconnect VPCs.
-- Cloud Computing Models
-![cloudModels](../images/cloudModels.jpg)
-- AWS **[Support Plans](https://aws.amazon.com/premiumsupport/plans/)**
-![supportPlans](../images/support1.jpg)
-![supportPlans](../images/support2.jpg)
-- AWS **System Manager** gives you visibility and control of your infrastructure on AWS. Systems Manager provides a unified user interface so you can view operational data from multiple AWS services and allows you to automate operational tasks such as running commands, managing patches, and configuring servers across AWS Cloud as well as on-premises infrastructure.
-![systemManager](../images/systemManager.jpg)

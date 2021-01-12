@@ -495,7 +495,7 @@ It allows :
  
 ### **AWS [shared responsability model](https://aws.amazon.com/compliance/shared-responsibility-model/)**
 
-> ![db](../images/sharedSecurity.jpg)
+> ![sharedModel](../images/sharedSecurity.jpg)
 
 - AWS is responsible for the **security of the cloud** : hardware, software networking and facilities. It is also reponsible for the security configurations of it's products.
 
