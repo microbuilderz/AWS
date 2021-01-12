@@ -60,11 +60,10 @@ They grant permissions to trusted entities.
 ### Acessing AWS account
 
 - AWS management console using password and MFA. (AWS Internet site)
-- AWS command line User interface (CLI) using access keys. ( CLI can be installed on multiple OS)
-- AWS SDK (used when you write code) by using access keys. ( Software developper Kit )
+- AWS command line User interface (CLI) using **access keys**. ( CLI can be installed on multiple OS)
+- AWS SDK (used when you write code) by using **access keys**. ( Software developper Kit )
 
-Acess Keys ID = username
-Secret Acess Keys = password
+Acess Keys ID = username / Secret Acess Keys = password
 ### IAM Best practices
 
 - do not use root account only for AWS setup account.
@@ -156,7 +155,7 @@ Brige between **on-premises data and cloud** that helps **accessing data**. It i
 EBS storage is a **network drive** , One EBS volume can be attached **to a single instance**.
 Are **locked to one AZ**. EBS volume are **persistant**. only same AZ instances cann attach to EBS.
 to transfer EBS volume data across regions, we can use **snapshot** to restore it in another region or AZ.
-EBS snapshots are stored in amazone S3.
+EBS snapshots are **stored in amazone S3**.
 ### Instance Storage
 
 **Hardware** disk storage. Better IO performance. They **loose their** storage when detached. They are good for buffer/ cache / temporary content.
@@ -174,7 +173,7 @@ It is a Managed Load balancer across multiple AZ. It supports health checks.
 - Network LB : ultra high perfromance , TCP layer 4
 - Classic LB : layer 4 and layer 7.
 
-## [Auto Scaling Group] (ASG)
+## Auto Scaling Group (ASG)
 Create or removes instances depending on demands or instance health across AZ. it can be used with elastic load balancer.
 they are defined by minimun size, desired capacity, and a maximum size.
 
@@ -184,7 +183,7 @@ they are defined by minimun size, desired capacity, and a maximum size.
 
 - **Infinitly** scalable storage. 
 - Can be used for **disaster recovery**, **archive**, **hybrid** cloud storage, **media hosting**, **big data**, **software delivery** and **static websites**.
-- S3 stores **objects** in **buckets**. Buckets must be **uniqly named globally**. Buckets are created at the **region level**.
+- S3 stores **objects** in **buckets**. Buckets must be **uniquely named globally**. Buckets are created at the **region level**.
 - Bucket **key** is the **full path**.
 - Maximum object size is **5 Gig**. (**use multi part upload** for bigger then 5 Gigs).
 - By default public Bucket are blocked.
@@ -303,7 +302,7 @@ Propriatory, cloud optimized, supports only **Postgres** (3x perfromance) and **
 It's a managed **E**xtract, **T**ransform and **L**oad service (ETL).
 Used to prepare and transform data to analytics.
 It's full **serverless**.
-Glue Data Catalog is a central repository to store the cataloge of datasets. It is used to **provide metadata** to athena, Redshift and EMR.
+**Glue Data Catalog** is a central repository to store the cataloge of datasets. It is used to **provide metadata** to athena, Redshift and EMR.
 
 ## Other Compute services
 
@@ -337,7 +336,7 @@ It is used for workloads from **0 to 15 Minutes**.
 
 ### LightSail
 
-**Low and predictable** pricing. FUlly managed. Can setup monitoring and notifications.
+**Low and predictable** pricing. Fully managed. Can setup monitoring and notifications.
 Mostly for website, simple applications. For Users with **No cloud expierience**.
 
 ## Deployment & Management Infrastructure
@@ -608,6 +607,11 @@ global billing alarm
 
 **Creates Budgets** and **send alarms** when a threshold has been exceeded.
 It allows companies to **track and categorize spending on a detailed level**.You can also use AWS Budgets to **set reservation utilization or coverage targets** and receive alerts when your utilization **drops below the threshold you define**.
+There are four different budget types you can create under AWS Budgets:
+- Cost budget : Helps you plan how much you want to spend on a service.
+- Usage budget : Helps you plan how much you want to use one or more services.
+- Reservation budget : This helps you track the usage of your Reserved Instances (RI)
+- Savings Plans budget : This helps you track the usage of Savings Plans utilization
 
 > **It is useful to note the difference between CloudWatch Billing vs Budgets**:
 > - **CloudWatch Billing Alarms**: Sends an alarm when the **actual cost** exceeds a **certain threshold**.
@@ -661,7 +665,7 @@ Use **one login** to connect to **multiple accounts**. can be integrated with on
 - Apply **security in all layers**.
 - **Automate security**.
 - **Protect data** in and out.
-- Prepare **seucrity events**.
+- Prepare **security events**.
 
 - Amazon **[GuardDuty](https://aws.amazon.com/guardduty/)** is a threat detection service that monitors malicious activity and unauthorized behavior to protect your AWS account.
 
