@@ -60,9 +60,6 @@ Secret Acess Keys = password
 - use IAM **credential report** and IAM **access advisor** to audit user access.
 
 ## [Cloud Computing](../TechnicalProfessional/AWS-core.md#cloud-) 
-## [Elastic Cloud Compute (EC2)] (../TechnicalProfessional/AWS-core.md#compute-services-ec2)
-
-It is an IaaS.
 
 ### [EC2 Instance](../TechnicalProfessional/AWS-core.md#aws-compute-services)
 ### [EC2 Instance Benefits](../TechnicalProfessional/AWS-core.md#aws-ec2-benefits-)
@@ -158,12 +155,14 @@ It is a Managed Load balancer across multiple AZ. It supports health checks.
 - Network LB : ultra high perfromance , TCP layer 4
 - Classic LB : layer 4 and layer 7.
 
-## [Auto Scaling Group] (ASG)(../TechnicalProfessional/AWS-core.md#scalable-architecture-)
+## [Auto Scaling Group] (ASG)
 
 Create or removes instances depending on demands or instance health across AZ. it can be used with elastic load balancer.
 they are defined by minimun size, desired capacity, and a maximum size.
 
 ## [Amazone Simple Storage service](../TechnicalProfessional/AWS-core.md#amazone-simple-storage-service-s3)
+
+> ![storageClasses](../images/storageClasses.jpg)
 
 - **Infinitly** scalable storage. 
 - Can be used for **disaster recovery**, **archive**, **hybrid** cloud storage, **media hosting**, **big data**, **software delivery** and **static websites**.
@@ -330,8 +329,9 @@ Can be **timely managed** to destroy the services at certain time.It's usage **i
 
 ### BeanStalk
 
-It is a Managed **Plattform as a service**. It is a **developer centric view**.
-It's usage **is free**.
+It is an **easy-to-use service** for **deploying and scaling web applications and services** developed in a variety of **programming languages**.
+You can **simply upload your code** and Elastic Beanstalk **automatically handles the deployment**, from capacity provisioning, load balancing, auto-scaling to application health monitoring.It is a Managed **Plattform as a service**. It is a **developer centric view**.
+It's usage is **free**.
 ### CodeDeploy
 
 It doesn't need to use CloudFormation or BeanStalk. It is a **hybrid service**. Servers and Instances **must be provisioned**.
