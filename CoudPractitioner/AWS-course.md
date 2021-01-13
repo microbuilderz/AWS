@@ -7,6 +7,26 @@ This policy is present at [aup](https://aws.amazon.com/aup/) and is updated on a
 - No security violations.
 - No Network, e-Mail or Message absue
 
+## Cloud Adoption Framework
+
+It organizes guidance into **six focus areas** described as **Perspectives**.
+In general, the **Business, People, and Governance** Perspectives focus on
+**business** capabilities, and the **Platform, Security, and Operations Perspectives**
+focus on **technical capabilities**
+
+- Business : Common roles: Business Managers, Finance Managers, Budget Owners, and Strategy Stakeholders.
+  It helps you to move from a model that separates business and IT strategies into a business model that integrates IT strategy.
+- People : Common roles: Human Resources, Staffing, and People Managers.
+  It helps Human Resources (HR) employees prepare their teams for cloud adoption by updating organizational processes and staff skills to include cloud-based competencies.
+- Governance : Common roles: CIO, Program Managers,Project Managers, Enterprise Architects, Business Analysts, and Portfolio Managers.
+  It Helps stakeholders understand how to update the staff skills and organizational processes that are necessary to ensure business governance in the cloud, and manage and measure cloud investments to evaluate their business outcomes.
+- Plattform : Common roles: CTO, IT Managers, and Solution Architects.
+  It Helps stakeholders understand how to update the staff skills and organizational processes that are necessary to deliver and optimize cloud solutions and services.
+- Security : CISO, IT Security Managers,and IT Security Analysts.
+  It Helps stakeholders understand how to update the staff skills and organizational processes that are necessary to ensure that the architecture deployed in the cloud aligns to the organization’s security control requirements, resiliency, and compliance requirements.
+- Operations : IT Operations Managers and IT Support Managers.
+  It Helps stakeholders understand how to update the staff skills and organizational processes that are necessary to ensure system health and reliability during the move of operations to the cloud and then to operate using agile, ongoing, cloud computing best practices.
+
 ## Types of cloud computing
 
 - IaaS : Virtualisation, Servers, Storage and Networking is managed by the cloud company (example EC2)
