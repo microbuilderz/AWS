@@ -502,7 +502,7 @@ It allows :
 - Customers are reponsible for the **security in the cloud** : security of customer content and applications that use AWS services.
 ### **AWS cloud [compliance](https://aws.amazon.com/compliance/)**
 
-- AWS environment are continuasly audited.
+- AWS environment are continualy audited.
 - AWS shars information about industry certifications, security and control practices.
 
 ### **AWS Organizations**

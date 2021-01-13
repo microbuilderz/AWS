@@ -165,7 +165,7 @@ Browser based ssh connection.
 
 ### Amazon Machine Images (AMI) 
 
-Are a custimization of EC2 instances.
+Are a customization of EC2 instances.
 
 ### Storage Gateway
 
@@ -263,7 +263,7 @@ use [snowball](../TechnicalProfessional/AWS-core.md#aWS-Snow-Family)
 - **Automated** provisioning , OS patching.
 - Continuous backup and restore options.
 - Monitoring dash board.
-- scale the read perfromance with read replicas.
+- Scale the read perfromance with read replicas.
 - Multi AZ for disaster recovery.
 - Storage is backed by EBS.
 - Vertical/Horizontal scalable.
