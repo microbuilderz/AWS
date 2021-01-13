@@ -21,6 +21,14 @@
 1. [AWS-Course](./CoudPractitioner/AWS-course.md)
 2. [AWS-training](https://www.aws.training/Details/eLearning?id=60697)
 3. [Udemy-training](https://www.udemy.com/course/aws-certified-cloud-practitioner-new/)
+
+### Exam Practice for AWS Cloud Pratitioner
+
+- [20 AWS Practitioner questions](https://digitalcloud.training/aws-cloud-practitioner-free-practice-questions/)
+- [whizlabs Practitioner Tests](https://www.whizlabs.com/learn/course/aws-certified-cloud-practitioner-practice-tests)
+- [exam topics](https://www.examtopics.com/exams/amazon/aws-certified-cloud-practitioner/view/)
+- [Free Practitioner exams](https://www.awsboy.com/aws-practice-exams/practitioner/)
+- [Udemy Practice exams](https://www.udemy.com/course/practice-exams-aws-certified-cloud-practitioner)
 ## AWS Technical Professional
 
 1. [AWS Core Technologies](./TechnicalProfessional/AWS-core.md)

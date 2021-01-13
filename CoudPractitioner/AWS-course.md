@@ -750,15 +750,6 @@ The AWS Certified Cloud Practitioner exam consists of **65 questions** to be com
 - [Overview of Amazon Web Services](https://d1.awsstatic.com/whitepapers/aws-overview.pdf) 
 - [How AWS pricing Works](http://d1.awsstatic.com/whitepapers/aws_pricing_overview.pdf)
 - [Compare AWS Supportplan](https://aws.amazon.com/premiumsupport/plans/)
-
-## Exam Practice 
-
-- [20 AWS Practitioner questions](https://digitalcloud.training/aws-cloud-practitioner-free-practice-questions/)
-- [whizlabs Practitioner Tests](https://www.whizlabs.com/learn/course/aws-certified-cloud-practitioner-practice-tests)
-- [exam topics](https://www.examtopics.com/exams/amazon/aws-certified-cloud-practitioner/view/)
-- [Free Practitioner exams](https://www.awsboy.com/aws-practice-exams/practitioner/)
-- [Udemy Practice exams](https://www.udemy.com/course/practice-exams-aws-certified-cloud-practitioner)
-
 ## Remarks and more stuff
 
 - AWS **[WAF](https://aws.amazon.com/waf/)** - By using AWS WAF, you can configure web access control lists (Web ACLs) on your **CloudFront distributions** or **Application Load Balancers** to filter and block requests based on request signatures. Besides, by using AWS WAF's rate-based rules, you can automatically block the IP addresses of bad actors when requests matching a rule exceed a threshold that you define.
