@@ -76,7 +76,7 @@ They grant permissions to trusted entities.
 ### IAM Security tools :
 
 - IAM **credential report** (Account level) : it lists all users and credential reports
-- IAM **access advisor** (User level) : it shows the service permissions granted to a specific user and last access time.  
+- IAM **access advisor** (User level) : It uses data analysis to **help on permission setting** . it shows the service permissions granted to a specific user and last access time.  
 ### Acessing AWS account
 
 - AWS management console using password and MFA. (AWS Internet site)
@@ -109,11 +109,11 @@ They can be attached to multiple instances.
 
 ### EC2 **user data**
 
-Script launched at the first start of instance
+User defined script that is launched at the first start of instance. 
 
-### instance metadata
+### Instance metadata
 
-Are the defined parameters and attributes specified in instance configuration.
+Are the defined parameters and attributes specified in instance configuration. It is the data used to configure or manage the running instance. for example, host name, events, and security groups.
 ### EC2 instance connect
 
 Browser based ssh connection.
@@ -261,10 +261,11 @@ use [snowball](../TechnicalProfessional/AWS-core.md#aWS-Snow-Family)
 
 - **Managed database** using SQL.
 - **Automated** provisioning , OS patching.
-- Continuous backup and restore options.
+- **Continuous** backup and restore **options**.
 - Monitoring dash board.
-- Scale the read perfromance with read replicas.
-- Multi AZ for disaster recovery.
+- **Scale** the read performance with **read replicas**.
+- **Multi Region** for disaster recovery.
+- **Multi AZ** for high availability.
 - Storage is backed by EBS.
 - Vertical/Horizontal scalable.
 - OLTP : online transaction processing
@@ -415,11 +416,12 @@ It has **Ddos protection**. It caches in **S3 Bucket** or **Https server**. Not 
 
 ### S3 Transfer Acceleration
 
-Increase transfer speed of files in and out of S3.
+**Increase transfer speed** of files **in and out of S3** by taking advantage of Amazon CloudFront’s globally distributed edge locations. 
 
 ### AWS Global Accelerator
 
 **Redirects** to the proper application region throught the AWS internal network.
+It helps bridge the gap between single and multiple Region deployments by improving the network routing for local and global traffic.
 ## Cloud Integration
 
 **Decouple** applications with SQS or SNS
@@ -720,12 +722,12 @@ Run system at the lowest price.
 
 ## AWS EcoSystem
 
-APN : AWS Partner Network
-APN Technology Partner : provding hardware / Connectivity / and software help
-APN Consulting Partner : helps building systems
-APN Training Partner : helping on learning AWS
-AWS Competency Program : granted to APN Partners with strong technical proficiencies
-AWS Navigate Program : helps partners becomre better partners 
+- APN : AWS Partner Network
+- APN Technology Partner : provding hardware / Connectivity / and software help
+- APN Consulting Partner : helps building systems
+- APN Training Partner : helping on learning AWS
+- AWS Competency Program : granted to APN Partners with strong technical proficiencies
+- AWS Navigate Program : helps partners becomre better partners 
 > ![apnPartners](../images/apnPartners.jpg)
 
 ## check [Technical Professional](../TechnicalProfessional/AWS-core.md) for further documentation
