@@ -24,11 +24,14 @@
 
 ### Exam Practice for AWS Cloud Pratitioner
 
+- [10 AWS exam questions](https://d1.awsstatic.com/training-and-certification/Docs%20-%20Cloud%20Practitioner/AWS%20Certified%20Cloud%20Practitioner%20Sample%20Questions.pdf)
 - [20 AWS Practitioner questions](https://digitalcloud.training/aws-cloud-practitioner-free-practice-questions/)
 - [whizlabs Practitioner Tests](https://www.whizlabs.com/learn/course/aws-certified-cloud-practitioner-practice-tests)
+- [25 AWS Practitioner questions](https://awscoach.net/practitioner-questions/)
 - [exam topics](https://www.examtopics.com/exams/amazon/aws-certified-cloud-practitioner/view/)
 - [Free Practitioner exams](https://www.awsboy.com/aws-practice-exams/practitioner/)
 - [Udemy Practice exams](https://www.udemy.com/course/practice-exams-aws-certified-cloud-practitioner)
+
 ## AWS Technical Professional
 
 1. [AWS Core Technologies](./TechnicalProfessional/AWS-core.md)
